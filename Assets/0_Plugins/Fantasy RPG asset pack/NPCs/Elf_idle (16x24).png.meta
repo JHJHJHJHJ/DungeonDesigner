@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 2d5f5218254fb4a479e7690e60821bd5
+guid: 473706f53e9634e42a482ccbd6ba11eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2779782348116244481
-    second: Mushy 02_walk (16x16)_0
+      213: 2202940879280952786
+    second: Elf_idle (16x24)_0
   - first:
-      213: -6012868682010948257
-    second: Mushy 02_walk (16x16)_1
+      213: -8606374321230010445
+    second: Elf_idle (16x24)_1
   - first:
-      213: -3164080050634775337
-    second: Mushy 02_walk (16x16)_2
+      213: -2222542105090634956
+    second: Elf_idle (16x24)_2
   - first:
-      213: -4405396144133412390
-    second: Mushy 02_walk (16x16)_3
+      213: 8643142852686741020
+    second: Elf_idle (16x24)_3
   - first:
-      213: 8821227545354195692
-    second: Mushy 02_walk (16x16)_4
+      213: 1757606342157007141
+    second: Elf_idle (16x24)_4
   - first:
-      213: -6510413108378610238
-    second: Mushy 02_walk (16x16)_5
+      213: 2109025427105427309
+    second: Elf_idle (16x24)_5
   - first:
-      213: 4168298277989364084
-    second: Mushy 02_walk (16x16)_6
+      213: 354104730941303782
+    second: Elf_idle (16x24)_6
   - first:
-      213: -287169021426359299
-    second: Mushy 02_walk (16x16)_7
+      213: -6229146071245358801
+    second: Elf_idle (16x24)_7
   - first:
-      213: -6170393016006382564
-    second: Mushy 02_walk (16x16)_8
+      213: -9000077931097740814
+    second: Elf_idle (16x24)_8
   - first:
-      213: 8039467674855056698
-    second: Mushy 02_walk (16x16)_9
+      213: 2193544549696358366
+    second: Elf_idle (16x24)_9
   - first:
-      213: -4162320129531931664
-    second: Mushy 02_walk (16x16)_10
+      213: 2483294306864693522
+    second: Elf_idle (16x24)_10
   - first:
-      213: 6211919960690726560
-    second: Mushy 02_walk (16x16)_11
+      213: -2366534303200344538
+    second: Elf_idle (16x24)_11
   - first:
-      213: 5049324601251837226
-    second: Mushy 02_walk (16x16)_12
+      213: 1841488715517635668
+    second: Elf_idle (16x24)_12
   - first:
-      213: 5993969903320233696
-    second: Mushy 02_walk (16x16)_13
+      213: 4333947863792436423
+    second: Elf_idle (16x24)_13
   - first:
-      213: 3659026626108211084
-    second: Mushy 02_walk (16x16)_14
+      213: -5993451326809033670
+    second: Elf_idle (16x24)_14
   - first:
-      213: -8239712601047506784
-    second: Mushy 02_walk (16x16)_15
+      213: 131034812649834813
+    second: Elf_idle (16x24)_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -163,13 +163,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_0
+      name: Elf_idle (16x24)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d55abade0b629e10800000000000000
+      internalID: 2202940879280952786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_idle (16x24)_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7aa034724009880800000000000000
+      internalID: -8606374321230010445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_idle (16x24)_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b49bf1bb1f721e0800000000000000
+      internalID: -2222542105090634956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_idle (16x24)_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e795591ac92f770800000000000000
+      internalID: 8643142852686741020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_idle (16x24)_4
       rect:
         serializedVersion: 2
         x: 0
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 108be545155c39620800000000000000
-      internalID: 2779782348116244481
+      spriteID: 529fd3fe7a5446810800000000000000
+      internalID: 1757606342157007141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_1
+      name: Elf_idle (16x24)_5
       rect:
         serializedVersion: 2
         x: 16
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d8aaf8acffd8ca0800000000000000
-      internalID: -6012868682010948257
+      spriteID: d6fa2eca373c44d10800000000000000
+      internalID: 2109025427105427309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_2
+      name: Elf_idle (16x24)_6
       rect:
         serializedVersion: 2
         x: 32
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d4a30d35fde614d0800000000000000
-      internalID: -3164080050634775337
+      spriteID: 6ebaa0d60680ae400800000000000000
+      internalID: 354104730941303782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_3
+      name: Elf_idle (16x24)_7
       rect:
         serializedVersion: 2
         x: 48
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad96d063c83ecd2c0800000000000000
-      internalID: -4405396144133412390
+      spriteID: f297661d6a0ad89a0800000000000000
+      internalID: -6229146071245358801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_4
+      name: Elf_idle (16x24)_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce25ab337bb4b6a70800000000000000
-      internalID: 8821227545354195692
+      spriteID: 2f9261e5ecc491380800000000000000
+      internalID: -9000077931097740814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_5
+      name: Elf_idle (16x24)_9
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +366,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c5db0685cd56a5a0800000000000000
-      internalID: -6510413108378610238
+      spriteID: ed745a36529017e10800000000000000
+      internalID: 2193544549696358366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_6
+      name: Elf_idle (16x24)_10
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471bd610335c8d930800000000000000
-      internalID: 4168298277989364084
+      spriteID: 2118b69d30f667220800000000000000
+      internalID: 2483294306864693522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_7
+      name: Elf_idle (16x24)_11
       rect:
         serializedVersion: 2
         x: 48
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,104 +408,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df3a267eb45c30cf0800000000000000
-      internalID: -287169021426359299
+      spriteID: 62687f4f691682fd0800000000000000
+      internalID: -2366534303200344538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1c636c7e3c5e5aa0800000000000000
-      internalID: -6170393016006382564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a35a8fe514de19f60800000000000000
-      internalID: 8039467674855056698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f39ac525e77c36c0800000000000000
-      internalID: -4162320129531931664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a61126ca4c253650800000000000000
-      internalID: 6211919960690726560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_12
+      name: Elf_idle (16x24)_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,20 +429,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25b14de8fdc21640800000000000000
-      internalID: 5049324601251837226
+      spriteID: 45ca15aea384e8910800000000000000
+      internalID: 1841488715517635668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_13
+      name: Elf_idle (16x24)_13
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,20 +450,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e6f8c1aedbde2350800000000000000
-      internalID: 5993969903320233696
+      spriteID: 7c44960be96452c30800000000000000
+      internalID: 4333947863792436423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_14
+      name: Elf_idle (16x24)_14
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,20 +471,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8f30e0845977c230800000000000000
-      internalID: 3659026626108211084
+      spriteID: a3434fed5cbf2dca0800000000000000
+      internalID: -5993451326809033670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_15
+      name: Elf_idle (16x24)_15
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -492,8 +492,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a0e0439b09a6ad80800000000000000
-      internalID: -8239712601047506784
+      spriteID: d390435c77781d100800000000000000
+      internalID: 131034812649834813
       vertices: []
       indices: 
       edges: []

@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 2d5f5218254fb4a479e7690e60821bd5
+guid: 3b487537bd29db847b5143347fd2cf8f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2779782348116244481
-    second: Mushy 02_walk (16x16)_0
+      213: -3889457306812046685
+    second: NPC 02_walk (16x24)_0
   - first:
-      213: -6012868682010948257
-    second: Mushy 02_walk (16x16)_1
+      213: 3191768052300055562
+    second: NPC 02_walk (16x24)_1
   - first:
-      213: -3164080050634775337
-    second: Mushy 02_walk (16x16)_2
+      213: -5556198971502174653
+    second: NPC 02_walk (16x24)_2
   - first:
-      213: -4405396144133412390
-    second: Mushy 02_walk (16x16)_3
+      213: 9128853081304415960
+    second: NPC 02_walk (16x24)_3
   - first:
-      213: 8821227545354195692
-    second: Mushy 02_walk (16x16)_4
+      213: 3527648549809246106
+    second: NPC 02_walk (16x24)_4
   - first:
-      213: -6510413108378610238
-    second: Mushy 02_walk (16x16)_5
+      213: -659609899927150073
+    second: NPC 02_walk (16x24)_5
   - first:
-      213: 4168298277989364084
-    second: Mushy 02_walk (16x16)_6
+      213: 744542812897280858
+    second: NPC 02_walk (16x24)_6
   - first:
-      213: -287169021426359299
-    second: Mushy 02_walk (16x16)_7
+      213: 712381973291665618
+    second: NPC 02_walk (16x24)_7
   - first:
-      213: -6170393016006382564
-    second: Mushy 02_walk (16x16)_8
+      213: 7886302952125158232
+    second: NPC 02_walk (16x24)_8
   - first:
-      213: 8039467674855056698
-    second: Mushy 02_walk (16x16)_9
+      213: 3826704074991499666
+    second: NPC 02_walk (16x24)_9
   - first:
-      213: -4162320129531931664
-    second: Mushy 02_walk (16x16)_10
+      213: -6067858904779952944
+    second: NPC 02_walk (16x24)_10
   - first:
-      213: 6211919960690726560
-    second: Mushy 02_walk (16x16)_11
+      213: -6916438844120483699
+    second: NPC 02_walk (16x24)_11
   - first:
-      213: 5049324601251837226
-    second: Mushy 02_walk (16x16)_12
+      213: 8978378663694397124
+    second: NPC 02_walk (16x24)_12
   - first:
-      213: 5993969903320233696
-    second: Mushy 02_walk (16x16)_13
+      213: 9090002877539365820
+    second: NPC 02_walk (16x24)_13
   - first:
-      213: 3659026626108211084
-    second: Mushy 02_walk (16x16)_14
+      213: -6943887740876659890
+    second: NPC 02_walk (16x24)_14
   - first:
-      213: -8239712601047506784
-    second: Mushy 02_walk (16x16)_15
+      213: -5620738183419826151
+    second: NPC 02_walk (16x24)_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -163,13 +163,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_0
+      name: NPC 02_walk (16x24)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2ab6acf2fd50ac0800000000000000
+      internalID: -3889457306812046685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02_walk (16x24)_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0409c202207b4c20800000000000000
+      internalID: 3191768052300055562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02_walk (16x24)_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ed832397a64e2b0800000000000000
+      internalID: -5556198971502174653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02_walk (16x24)_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de31edb28330be70800000000000000
+      internalID: 9128853081304415960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02_walk (16x24)_4
       rect:
         serializedVersion: 2
         x: 0
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 108be545155c39620800000000000000
-      internalID: 2779782348116244481
+      spriteID: a9f4dcf6aa9b4f030800000000000000
+      internalID: 3527648549809246106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_1
+      name: NPC 02_walk (16x24)_5
       rect:
         serializedVersion: 2
         x: 16
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d8aaf8acffd8ca0800000000000000
-      internalID: -6012868682010948257
+      spriteID: 702e2807a4898d6f0800000000000000
+      internalID: -659609899927150073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_2
+      name: NPC 02_walk (16x24)_6
       rect:
         serializedVersion: 2
         x: 32
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d4a30d35fde614d0800000000000000
-      internalID: -3164080050634775337
+      spriteID: a5300da5eb5255a00800000000000000
+      internalID: 744542812897280858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_3
+      name: NPC 02_walk (16x24)_7
       rect:
         serializedVersion: 2
         x: 48
         y: 48
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad96d063c83ecd2c0800000000000000
-      internalID: -4405396144133412390
+      spriteID: 2d8017e51a3e2e900800000000000000
+      internalID: 712381973291665618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_4
+      name: NPC 02_walk (16x24)_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce25ab337bb4b6a70800000000000000
-      internalID: 8821227545354195692
+      spriteID: 853d88460c6c17d60800000000000000
+      internalID: 7886302952125158232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_5
+      name: NPC 02_walk (16x24)_9
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +366,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c5db0685cd56a5a0800000000000000
-      internalID: -6510413108378610238
+      spriteID: 299786ad41f2b1530800000000000000
+      internalID: 3826704074991499666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_6
+      name: NPC 02_walk (16x24)_10
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471bd610335c8d930800000000000000
-      internalID: 4168298277989364084
+      spriteID: 0dc66699972aacba0800000000000000
+      internalID: -6067858904779952944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_7
+      name: NPC 02_walk (16x24)_11
       rect:
         serializedVersion: 2
         x: 48
-        y: 32
+        y: 24
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,104 +408,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df3a267eb45c30cf0800000000000000
-      internalID: -287169021426359299
+      spriteID: d883c71248fd300a0800000000000000
+      internalID: -6916438844120483699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1c636c7e3c5e5aa0800000000000000
-      internalID: -6170393016006382564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a35a8fe514de19f60800000000000000
-      internalID: 8039467674855056698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f39ac525e77c36c0800000000000000
-      internalID: -4162320129531931664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a61126ca4c253650800000000000000
-      internalID: 6211919960690726560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_12
+      name: NPC 02_walk (16x24)_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,20 +429,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25b14de8fdc21640800000000000000
-      internalID: 5049324601251837226
+      spriteID: 4ce637c33db999c70800000000000000
+      internalID: 8978378663694397124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_13
+      name: NPC 02_walk (16x24)_13
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,20 +450,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e6f8c1aedbde2350800000000000000
-      internalID: 5993969903320233696
+      spriteID: cb3330bc47d262e70800000000000000
+      internalID: 9090002877539365820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_14
+      name: NPC 02_walk (16x24)_14
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,20 +471,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8f30e0845977c230800000000000000
-      internalID: 3659026626108211084
+      spriteID: e436bd4d3ea52af90800000000000000
+      internalID: -6943887740876659890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushy 02_walk (16x16)_15
+      name: NPC 02_walk (16x24)_15
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -492,8 +492,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a0e0439b09a6ad80800000000000000
-      internalID: -8239712601047506784
+      spriteID: 91079c1f6602ff1b0800000000000000
+      internalID: -5620738183419826151
       vertices: []
       indices: 
       edges: []
