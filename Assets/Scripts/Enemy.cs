@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     Animator animator;
     AnimatorOverrideController overrideController;
-
+    Rigidbody2D rb2D;
     bool isWalking = false;
 
     private void Awake() 
@@ -15,12 +15,22 @@ public class Enemy : MonoBehaviour
 
         overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         animator.runtimeAnimatorController = overrideController;
+
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start() 
+    {
+        GetComponent<AnimatorOverrider>().SetAnimatorOverrider(overrideController, 2);    
     }
 
     private void Update() 
     {
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            print("A");
+
             isWalking = !isWalking;
             animator.SetBool("isWalking", isWalking);
         }
