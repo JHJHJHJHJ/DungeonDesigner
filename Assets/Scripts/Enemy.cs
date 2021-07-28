@@ -6,50 +6,19 @@ public class Enemy : MonoBehaviour
 {
     Animator animator;
     AnimatorOverrideController overrideController;
-    Rigidbody2D rb2D;
-    bool isWalking = false;
 
     private void Awake() 
     {
         animator = GetComponent<Animator>();
-
-        overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
-        animator.runtimeAnimatorController = overrideController;
-
-        rb2D = GetComponent<Rigidbody2D>();
     }
 
     private void Start() 
     {
-        GetComponent<AnimatorOverrider>().SetAnimatorOverrider(overrideController, 2);    
+        GetComponent<AnimatorOverrider>().SetAnimatorOverrider(Direction.up);    
     }
 
     private void Update() 
     {
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            print("A");
-
-            isWalking = !isWalking;
-            animator.SetBool("isWalking", isWalking);
-        }
-
-        if(Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            GetComponent<AnimatorOverrider>().SetAnimatorOverrider(overrideController, 0);
-        }   
-        else if(Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            GetComponent<AnimatorOverrider>().SetAnimatorOverrider(overrideController, 1);
-        } 
-        else if(Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            GetComponent<AnimatorOverrider>().SetAnimatorOverrider(overrideController, 2);
-        }
-        else if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            GetComponent<AnimatorOverrider>().SetAnimatorOverrider(overrideController, 3);
-        }
+        
     }
 }

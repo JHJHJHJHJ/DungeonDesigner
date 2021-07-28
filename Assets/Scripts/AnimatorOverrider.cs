@@ -8,9 +8,25 @@ public class AnimatorOverrider : MonoBehaviour
     [SerializeField] AnimationClip[] idleClips;
     [SerializeField] AnimationClip[] walkClips;
 
-    public void SetAnimatorOverrider(AnimatorOverrideController overrideController, int i)
+    Animator animator;
+    AnimatorOverrideController overrideController;
+
+    private void Awake() 
     {
-        overrideController["Idle"] = idleClips[i];
-        overrideController["Walk"] = walkClips[i];
+        animator = GetComponent<Animator>();
+
+        overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        animator.runtimeAnimatorController = overrideController;
     }
+
+    public void SetAnimatorOverrider(Direction direction)
+    {
+        overrideController["Idle"] = idleClips[(int)direction];
+        overrideController["Walk"] = walkClips[(int)direction];
+    }
+}
+
+public enum Direction
+{
+    up = 0, right = 1, down = 2, left = 3
 }
