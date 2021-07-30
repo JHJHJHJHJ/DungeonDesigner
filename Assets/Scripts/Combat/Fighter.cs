@@ -14,43 +14,60 @@ namespace DD.Combat
         [SerializeField] float timeBetweenAttack = 1f;
 
         [SerializeField] Health target;
-        float timeSinceLastAttack = Mathf.Infinity;
+        float timeSinceLastAttack;
         Animator animator;
+        AnimatorOverrider animatorOverrider;
+        Mover mover;
 
         private void Awake() 
         {
             animator = GetComponent<Animator>();
+            animatorOverrider = GetComponent<AnimatorOverrider>();
+            mover = GetComponent<Mover>();
         }
 
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
 
-            if (target == null) return;
+            if (GetComponent<Health>().IsDead() || target == null) return;
 
             if (!IsInRange())
             {
-                GetComponent<Mover>().MoveTo(target.transform);
+                mover.MoveTo(target.transform);
             }
             else
             {
                 animator.SetBool("isFighting", true);
-                GetComponent<Mover>().Cancel();
+                mover.Cancel();
                 AttackBehaviour();
             }
         }
 
         void AttackBehaviour()
         {
+            if(target == null) return;
+
+            animatorOverrider.UpdateAnimationClipByDirection(target.transform);
+
             if(timeSinceLastAttack >= timeBetweenAttack)
             {
                 // This will trigger 'Hit' event.
+                animator.ResetTrigger("Attack");
                 animator.SetTrigger("Attack");
                 timeSinceLastAttack = 0;
             }
         }
 
-        public void Attack(ActionObject combatTarget)
+        public bool CanAttack(GameObject combatTarget)
+        {
+            if(combatTarget == null) return false;
+
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
+        }
+
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
@@ -63,12 +80,19 @@ namespace DD.Combat
 
         public void Cancel()
         {
-            animator.SetBool("isFighting", false);
             target = null;
+            animator.ResetTrigger("Attack");
+
+            animator.SetBool("isFighting", false);
+            timeSinceLastAttack = 0;
+            
+            GetComponent<Mover>().Cancel();
         }
 
         void Hit()
         {
+            if(GetComponent<Health>().IsDead()) return;
+
             target.TakeDamage(damage);
             if(target.IsDead()) Cancel();
         } 

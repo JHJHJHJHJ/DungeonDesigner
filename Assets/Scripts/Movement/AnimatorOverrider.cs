@@ -30,6 +30,32 @@ namespace DD.Movement
             overrideController["Fight"] = fightClips[(int)direction];
             overrideController["Attack"] = attackClips[(int)direction];
         }
+
+        public void UpdateAnimationClipByDirection(Transform target)
+        {
+            Vector3 lookDirection = new Vector3(target.position.x - transform.position.x, target.position.y - transform.position.y, 0);
+            lookDirection = Vector3.Normalize(lookDirection);
+
+            if (lookDirection.x < -0.5)
+            {
+                SetAnimatorOverrider(Direction.left);
+            }
+            else if (lookDirection.x > 0.5)
+            {
+                SetAnimatorOverrider(Direction.right);
+            }
+            else
+            {
+                if (lookDirection.y >= 0)
+                {
+                    SetAnimatorOverrider(Direction.up);
+                }
+                else
+                {
+                    SetAnimatorOverrider(Direction.down);
+                }
+            }
+        }
     }
 }
 

@@ -21,13 +21,14 @@ namespace DD.Movement
             animatorOverrider = GetComponent<AnimatorOverrider>();
         }
 
-        private void Start()
-        {
-        }
-
         private void Update()
         {
             Move();
+            Arrive();
+        }
+
+        void Arrive()
+        {
             if (destination != null && transform.position == destination.position)
             {
                 Cancel();
@@ -50,7 +51,7 @@ namespace DD.Movement
         {
             if (destination == null) return;
 
-            UpdateAnimationClipByDirection();
+            animatorOverrider.UpdateAnimationClipByDirection(destination);
             transform.position = Vector2.MoveTowards(transform.position, destination.position, speed * Time.deltaTime);
         }
 
@@ -58,32 +59,6 @@ namespace DD.Movement
         {
             destination = null;
             animator.SetBool("isWalking", false);
-        }
-
-        void UpdateAnimationClipByDirection()
-        {
-            Vector3 moveDirection = new Vector3(destination.position.x - transform.position.x, destination.position.y - transform.position.y, 0);
-            moveDirection = Vector3.Normalize(moveDirection);
-
-            if (moveDirection.x < -0.5)
-            {
-                animatorOverrider.SetAnimatorOverrider(Direction.left);
-            }
-            else if (moveDirection.x > 0.5)
-            {
-                animatorOverrider.SetAnimatorOverrider(Direction.right);
-            }
-            else
-            {
-                if (moveDirection.y >= 0)
-                {
-                    animatorOverrider.SetAnimatorOverrider(Direction.up);
-                }
-                else
-                {
-                    animatorOverrider.SetAnimatorOverrider(Direction.down);
-                }
-            }
         }
     }
 }

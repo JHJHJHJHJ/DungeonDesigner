@@ -1,0 +1,88 @@
+using UnityEngine;
+using System.Collections;
+using DD.Action;
+using DD.AI;
+using TMPro;
+
+namespace DD.Level
+{
+    public class ObjectSpawner : MonoBehaviour
+    {
+        [SerializeField] GameObject player = null;
+        [SerializeField] ActionObject objectToSpawn = null;
+        [SerializeField] SpriteRenderer objectPreivew = null;
+
+        int mouseCount = 0;
+
+        GroundChecker groundChecker;
+
+        private void Awake()
+        {
+            groundChecker = objectPreivew.GetComponent<GroundChecker>();
+        }
+
+        private void Start()
+        {
+            objectPreivew.gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (objectToSpawn == null) return;
+
+            HandleSpawn();
+        }
+
+        private void HandleSpawn()
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 spawnPos = mousePos + new Vector2(0f, 0.5f);
+            UpdatePreview(spawnPos);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                mouseCount++;
+
+                if (mouseCount < 2) return;
+
+                objectPreivew.gameObject.SetActive(true);
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (mouseCount < 2) return;
+
+                if (groundChecker.IsOnGround())
+                {
+                    ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity);
+
+                    if (actionObject.GetObjectType() == ObjectType.enemy)
+                    {
+                        actionObject.GetComponent<EnemyController>().SetPlayer(player);
+                    }
+                }
+
+                objectPreivew.gameObject.SetActive(false);
+            }
+        }
+
+        public void Activate(ActionObject objectToSpawn)
+        {
+            this.objectToSpawn = objectToSpawn;
+        }
+
+        public void Deactivate()
+        {
+            objectToSpawn = null;
+            mouseCount = 0;
+        }
+
+        private void UpdatePreview(Vector2 spawnPos)
+        {
+            objectPreivew.transform.position = spawnPos;
+
+            if (!groundChecker.IsOnGround()) objectPreivew.color = new Color(1, 0, 0, 0.5f);
+            else objectPreivew.color = new Color(1, 1, 1, 0.5f);
+        }
+    }
+}
