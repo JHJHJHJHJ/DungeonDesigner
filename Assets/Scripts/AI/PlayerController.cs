@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using DD.Movement;
 using DD.Combat;
-using DD.Action;
+using DD.Object;
 
 namespace DD.AI
 {
@@ -21,6 +21,7 @@ namespace DD.AI
         Animator animator;
         AnimatorOverrideController overrideController;
         Fighter fighter;
+        Mover mover;
 
         ActionObject currentTarget = null;
         float timeSinceIdle = Mathf.Infinity;
@@ -29,6 +30,7 @@ namespace DD.AI
         {
             animator = GetComponent<Animator>();
             fighter = GetComponent<Fighter>();
+            mover = GetComponent<Mover>();
         }
 
         private void Start()
@@ -52,7 +54,9 @@ namespace DD.AI
             }
             else if(state == PlayerState.Interact)
             {
+                if(currentTarget.type == ObjectType.enemy) return;
 
+                Interact();
             }
         }
 
@@ -61,10 +65,14 @@ namespace DD.AI
             currentTarget = FindCloseTarget();
             if (currentTarget == null) return;
 
-            ObjectType targetType = currentTarget.GetObjectType();
+            ObjectType targetType = currentTarget.type;
             if (targetType == ObjectType.enemy)
             {
                 fighter.Attack(currentTarget.gameObject);
+            }
+            else
+            {
+
             }
 
             state = PlayerState.Interact;
@@ -98,11 +106,29 @@ namespace DD.AI
             return closeTarget;
         }
 
+        void Interact()
+        {
+            if (!IsInRange())
+            {
+                mover.MoveTo(currentTarget.transform);
+            }
+            else
+            {
+                mover.Cancel();
+                currentTarget.Interact();
+            }
+        }
+
         public void GoToIdle()
         {
             currentTarget = null;
             timeSinceIdle = 0;
             state = PlayerState.Idle;
+        }
+
+        bool IsInRange()
+        {
+            return Vector2.Distance(transform.position, currentTarget.transform.position) <= currentTarget.profile.interactRange;
         }
     }
 }

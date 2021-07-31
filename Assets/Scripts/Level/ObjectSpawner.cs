@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using DD.Action;
+using DD.Object;
 using DD.AI;
 using TMPro;
 
@@ -37,7 +37,7 @@ namespace DD.Level
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 spawnPos = mousePos + new Vector2(0f, 0.5f);
-            UpdatePreview(spawnPos);
+            UpdatePreviewStatus(spawnPos);
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -56,19 +56,21 @@ namespace DD.Level
                 {
                     ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity);
 
-                    if (actionObject.GetObjectType() == ObjectType.enemy)
+                    if (actionObject.type == ObjectType.enemy)
                     {
                         actionObject.GetComponent<EnemyController>().SetPlayer(player);
                     }
                 }
 
                 objectPreivew.gameObject.SetActive(false);
+                FindObjectOfType<PlayData>().UseCoin(objectToSpawn.profile.cost);
             }
         }
 
         public void Activate(ActionObject objectToSpawn)
         {
             this.objectToSpawn = objectToSpawn;
+            objectPreivew.sprite = objectToSpawn.profile.repSprite;
         }
 
         public void Deactivate()
@@ -77,7 +79,7 @@ namespace DD.Level
             mouseCount = 0;
         }
 
-        private void UpdatePreview(Vector2 spawnPos)
+        private void UpdatePreviewStatus(Vector2 spawnPos)
         {
             objectPreivew.transform.position = spawnPos;
 

@@ -1,38 +1,85 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DD.Action;
+using DD.Object;
 using DD.Level;
+using UnityEngine.UI;
+using TMPro;
 
 public class ObjectSelector : MonoBehaviour
 {
-    [SerializeField] ActionObject actionObject;
+    [Header("Components")]
+    [SerializeField] Image objectImage = null;
+    [SerializeField] TextMeshProUGUI nameText = null;
+    [SerializeField] TextMeshProUGUI costText = null;
+
+    [Header("Object")]
+    [SerializeField] ActionObject objectToSelect;
+
+    [Header("Color")]
+    [SerializeField] Color canSelectColor;
+    [SerializeField] Color cannotSelectColor;
+
+    // Reference
     ObjectSpawner objectSpawner;
+    PlayData playData;
+
+    // Status
     bool isSelected = false;
 
-    private void Awake() 
+    private void Awake()
     {
-        objectSpawner = FindObjectOfType<ObjectSpawner>();    
+        objectSpawner = FindObjectOfType<ObjectSpawner>();
+        playData = FindObjectOfType<PlayData>();
+    }
+
+    private void Start()
+    {
+        UpdateSelector();
+    }
+
+    private void Update()
+    {
+        UpdateCostTextColor();
+        if(isSelected && !CanSelect()) Deselect();
+    }
+
+    void UpdateSelector()
+    {
+        objectImage.sprite = objectToSelect.profile.repSprite;
+        nameText.text = objectToSelect.profile.myName;
+        costText.text = "● " + objectToSelect.profile.cost;
+    }
+
+    void UpdateCostTextColor()
+    {
+        if (CanSelect()) costText.color = canSelectColor;
+        else costText.color = cannotSelectColor;
+    }
+
+    bool CanSelect()
+    {
+        return playData.GetCurrentCoin() >= objectToSelect.profile.cost;
     }
 
     public void ToggleSelector()
     {
-        objectSpawner.Deactivate();
+        if(!CanSelect()) return;
 
         ObjectSelector[] objectSelectors = FindObjectsOfType<ObjectSelector>();
-        foreach(ObjectSelector objectSelector in objectSelectors)
+        foreach (ObjectSelector objectSelector in objectSelectors)
         {
-            if(!isSelected && objectSelector == this) 
+            if (!isSelected && objectSelector == this)
             {
                 isSelected = true;
                 continue;
             }
             objectSelector.Deselect();
-        }        
+        }
 
-        if(isSelected)
+        if (isSelected)
         {
-            objectSpawner.Activate(actionObject);
+            objectSpawner.Activate(objectToSelect);
             GetComponent<Animator>().SetBool("isSelected", true);
         }
     }
@@ -41,5 +88,7 @@ public class ObjectSelector : MonoBehaviour
     {
         isSelected = false;
         GetComponent<Animator>().SetBool("isSelected", false);
+
+        objectSpawner.Deactivate();
     }
 }

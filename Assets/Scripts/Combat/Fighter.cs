@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DD.Movement;
 using DD.Core;
-using DD.Action;
+using DD.Object;
 
 namespace DD.Combat
 {

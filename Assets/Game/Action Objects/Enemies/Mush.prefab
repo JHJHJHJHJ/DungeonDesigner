@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 7103917049123761333}
   - component: {fileID: 7950304700932768472}
   - component: {fileID: 1839480267}
+  - component: {fileID: 3640737501964078778}
   m_Layer: 0
   m_Name: Mush
   m_TagString: Untagged
@@ -308,7 +309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 1
-  player: {fileID: 0}
 --- !u!114 &801985371555769842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  profile: {fileID: 11400000, guid: 6eccb71e47a1ac04f84da285f8ecfb6e, type: 2}
+  actionEnded: {fileID: 0}
 --- !u!114 &1949701026095438190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,3 +427,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1cd4ca68216a4ba08d0acb1a4d996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3640737501964078778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103917050315381437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dc2f67bb856114eb8d1c499197c882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropCoin: 1

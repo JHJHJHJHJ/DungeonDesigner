@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DD.Action
+namespace DD.Object
 {
     public class ActionObject : MonoBehaviour
     {
-        [SerializeField] ObjectType type;
-        [SerializeField] int cost;
+        public ObjectType type;
+        public ObjectProfile profile;
+        [SerializeField] Event actionEnded;
 
         bool canInteract = true;
-
-        public ObjectType GetObjectType()
-        {
-            return type;
-        }
 
         public bool CanInteract()
         {
@@ -24,6 +20,13 @@ namespace DD.Action
         public void SetCanInteract(bool tf)
         {
             canInteract = tf;
+        }
+
+        public void Interact()
+        {
+            print("interacting...");
+            Destroy(gameObject);
+            actionEnded.Occurred();
         }
     }
 

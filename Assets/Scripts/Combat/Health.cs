@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
-using DD.Action;
+using DD.Object;
 
 namespace DD.Combat
 {
@@ -43,6 +43,9 @@ namespace DD.Combat
             {
                 actionObject.SetCanInteract(false);
                 actionEnded.Occurred();
+
+                FindObjectOfType<PlayData>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
+
                 Destroy(gameObject, 1f);
             }    
         }
