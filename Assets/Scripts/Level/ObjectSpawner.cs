@@ -54,17 +54,23 @@ namespace DD.Level
 
                 if (groundChecker.IsOnGround())
                 {
-                    ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity);
-
-                    if (actionObject.type == ObjectType.enemy)
-                    {
-                        actionObject.GetComponent<EnemyController>().SetPlayer(player);
-                    }
+                    Spawn(spawnPos);
                 }
 
                 objectPreivew.gameObject.SetActive(false);
-                FindObjectOfType<PlayData>().UseCoin(objectToSpawn.profile.cost);
             }
+        }
+
+        void Spawn(Vector2 spawnPos)
+        {
+            ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity);
+
+            if (actionObject.type == ObjectType.enemy)
+            {
+                actionObject.GetComponent<EnemyController>().SetPlayer(player);
+            }
+
+            FindObjectOfType<PlayData>().UseCoin(objectToSpawn.profile.cost);
         }
 
         public void Activate(ActionObject objectToSpawn)
