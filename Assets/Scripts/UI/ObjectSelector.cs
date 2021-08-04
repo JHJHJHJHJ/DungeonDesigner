@@ -5,6 +5,7 @@ using DD.Object;
 using DD.Level;
 using UnityEngine.UI;
 using TMPro;
+using DD.PlayState;
 
 public class ObjectSelector : MonoBehaviour
 {

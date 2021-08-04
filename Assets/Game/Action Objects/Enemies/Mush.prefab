@@ -323,7 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   profile: {fileID: 11400000, guid: 6eccb71e47a1ac04f84da285f8ecfb6e, type: 2}
-  actionEnded: {fileID: 0}
+  actionStarted: {fileID: 11400000, guid: dc78697a2f94a744abd056508fa0a9f7, type: 2}
+  actionEnded: {fileID: 11400000, guid: 8c6a706ee9f36064aa1938580926997a, type: 2}
 --- !u!114 &1949701026095438190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,11 +337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e45b3324fe4c94ba3825d451c26c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealthPoints: 25
+  maxHealthPoints: 25
   healthPoints: 25
   spriteRenderer: {fileID: 7103917049177786014}
   hitFeedback: {fileID: 1468140866}
-  actionEnded: {fileID: 11400000, guid: 6c3ed038ea48eef469f3e91709203f6b, type: 2}
 --- !u!114 &7103917049123761335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +370,6 @@ MonoBehaviour:
   damage: 3
   attackRange: 0.4
   timeBetweenAttack: 2
-  target: {fileID: 0}
 --- !u!114 &7103917049123761333
 MonoBehaviour:
   m_ObjectHideFlags: 0

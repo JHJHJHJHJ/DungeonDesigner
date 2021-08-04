@@ -26,6 +26,8 @@ namespace DD.AI
         ActionObject currentTarget = null;
         float timeSinceIdle = Mathf.Infinity;
 
+        bool isInteracting = false;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -56,7 +58,12 @@ namespace DD.AI
             {
                 if(currentTarget.type == ObjectType.enemy) return;
 
-                Interact();
+                if(!isInteracting)
+                {
+                    MoveToInteract();
+                }
+
+                // Fight와 Interact는 별도의 class에서에서 실행   
             }
         }
 
@@ -106,7 +113,7 @@ namespace DD.AI
             return closeTarget;
         }
 
-        void Interact()
+        void MoveToInteract()
         {
             if (!IsInRange())
             {
@@ -115,14 +122,17 @@ namespace DD.AI
             else
             {
                 mover.Cancel();
-                currentTarget.Interact();
+                currentTarget.StartActionWithThisObject();
+                isInteracting = true;
             }
         }
 
-        public void GoToIdle()
+        public void GoToIdleState() // Event Listner에서 실행
         {
             currentTarget = null;
             timeSinceIdle = 0;
+            isInteracting = false;
+
             state = PlayerState.Idle;
         }
 

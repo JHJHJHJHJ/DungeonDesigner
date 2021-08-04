@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DD.Core;
 
 namespace DD.Object
 {
     public class ActionObject : MonoBehaviour
     {
+        [Header("Configs")]
         public ObjectType type;
         public ObjectProfile profile;
-        [SerializeField] Event actionEnded;
 
+        [Header("Event")]
+        [SerializeField] DDEvent actionStarted;
+        [SerializeField] DDEvent actionEnded;
+
+        // Status
         bool canInteract = true;
+        bool isTarget = false;
+
 
         public bool CanInteract()
         {
@@ -22,10 +30,26 @@ namespace DD.Object
             canInteract = tf;
         }
 
-        public void Interact()
+        public bool IsTarget()
         {
-            print("interacting...");
-            Destroy(gameObject);
+            return isTarget;
+        }
+
+        public void SetTarget(bool tf)
+        {
+            isTarget = tf;
+        }
+
+        public void StartActionWithThisObject()
+        {
+            SetTarget(true);
+            actionStarted.Occurred();
+        }
+
+        public void EndActionWithThisObject()
+        {
+            SetCanInteract(false);
+            SetTarget(false);
             actionEnded.Occurred();
         }
     }

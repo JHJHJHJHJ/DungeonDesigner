@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 1975353677
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7423402256257523846, guid: dff50765bb4b08b4eb749c2916856418, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d770bf5252664074cb4e1d5d8a575a10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,8 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9115099107455548747}
   - component: {fileID: 955966686}
+  - component: {fileID: 8213993750948562515}
+  - component: {fileID: 6290162016842776966}
   m_Layer: 0
-  m_Name: Chest
+  m_Name: Default Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,5 +129,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  profile: {fileID: 11400000, guid: 342aa2b416ea9ac4fb794e9955d1f567, type: 2}
-  actionEnded: {fileID: 11400000, guid: 6c3ed038ea48eef469f3e91709203f6b, type: 2}
+  profile: {fileID: 11400000, guid: 186152493c81b3d42be6df17d1848741, type: 2}
+  actionStarted: {fileID: 11400000, guid: dc78697a2f94a744abd056508fa0a9f7, type: 2}
+  actionEnded: {fileID: 11400000, guid: 8c6a706ee9f36064aa1938580926997a, type: 2}
+--- !u!114 &8213993750948562515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115099107455548744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb945151df3bdf478885c43a01b1c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 0}
+--- !u!114 &6290162016842776966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115099107455548744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a995ba7d763e294fbfec8994d0949c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gEvent: {fileID: 11400000, guid: dc78697a2f94a744abd056508fa0a9f7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8213993750948562515}
+        m_TargetAssemblyTypeName: DD.Action.ActionHandler, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

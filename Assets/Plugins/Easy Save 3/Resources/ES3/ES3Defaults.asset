@@ -36,9 +36,12 @@ MonoBehaviour:
     - MoreMountains.NiceVibrations.Haptics
     - MoreMountains.Tools
     - MoreMountains.NiceVibrations.Demos
+    - Cinemachine
     - MoreMountains.Feedbacks.MMTools
     - MoreMountains.Feedbacks.TextMeshPro
+    - MoreMountains.Feedbacks.Cinemachine
     - MoreMountains.Tools.Feedbacks
+    - MoreMountains.Tools.Cinemachine
     - MoreMountains.NiceVibrations
     - MoreMountains.Tools.TextMeshPro
     - MoreMountains.Feedbacks.NiceVibrations

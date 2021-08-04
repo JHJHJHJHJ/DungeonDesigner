@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using DD.Object;
+using DD.PlayState;
+using DD.Core;
 
 namespace DD.Combat
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] float MaxHealthPoints = 100f;
+        [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] float healthPoints = 100f;
         [SerializeField] SpriteRenderer spriteRenderer = null;
         [SerializeField] MMFeedbacks hitFeedback = null; 
-        [SerializeField] Event actionEnded;
 
         bool isDead = false;
 
         private void Start() 
         {
-            healthPoints = MaxHealthPoints;    
+            healthPoints = maxHealthPoints;    
         }
 
         public void TakeDamage(float damage)
@@ -31,6 +32,11 @@ namespace DD.Combat
             }
         }
 
+        public void Heal(float heal)
+        {
+            healthPoints = Mathf.Min(healthPoints + heal, maxHealthPoints);
+        }
+
         void Die()
         {
             if(isDead) return;
@@ -41,8 +47,7 @@ namespace DD.Combat
             ActionObject actionObject = GetComponent<ActionObject>();
             if(actionObject != null)
             {
-                actionObject.SetCanInteract(false);
-                actionEnded.Occurred();
+                actionObject.EndActionWithThisObject();
 
                 FindObjectOfType<PlayData>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
 
@@ -62,7 +67,7 @@ namespace DD.Combat
 
         public float GetMaxHealthPoints()
         {
-            return MaxHealthPoints;
+            return maxHealthPoints;
         }
     }
 }

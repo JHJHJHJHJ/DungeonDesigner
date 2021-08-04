@@ -247,12 +247,12 @@ GameObject:
   - component: {fileID: 1572470650602235540}
   - component: {fileID: 8437919177390491912}
   - component: {fileID: 1572470650602235530}
-  - component: {fileID: 1572470650602235529}
   - component: {fileID: 1572470650602235528}
+  - component: {fileID: 1572470650602235529}
   - component: {fileID: 1572470650602235531}
   - component: {fileID: 1572470650602235541}
   - component: {fileID: 1572470650602235533}
-  - component: {fileID: 498455166}
+  - component: {fileID: 2485250834695295426}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -309,7 +309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   timeToIdle: 1
-  interactRange: 0.5
 --- !u!114 &1572470650602235530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,25 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e45b3324fe4c94ba3825d451c26c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealthPoints: 30
+  maxHealthPoints: 30
   healthPoints: 30
   spriteRenderer: {fileID: 5847650068456554459}
   hitFeedback: {fileID: 517195643}
-  actionEnded: {fileID: 11400000, guid: 6c3ed038ea48eef469f3e91709203f6b, type: 2}
---- !u!114 &1572470650602235529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5847650068702235229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0d0d635fa10b941b5b43902ed13996, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {fileID: 0}
-  speed: 0.8
+  actionEnded: {fileID: 0}
 --- !u!114 &1572470650602235528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +341,20 @@ MonoBehaviour:
   damage: 5
   attackRange: 0.5
   timeBetweenAttack: 1.5
-  target: {fileID: 0}
+--- !u!114 &1572470650602235529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5847650068702235229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0d0d635fa10b941b5b43902ed13996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  speed: 0.8
 --- !u!114 &1572470650602235531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1cd4ca68216a4ba08d0acb1a4d996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &498455166
+--- !u!114 &2485250834695295426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -422,16 +420,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5847650068702235229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9230f1c8c8f880e40814ea0bd5721a31, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a995ba7d763e294fbfec8994d0949c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gEvent: {fileID: 11400000, guid: 6c3ed038ea48eef469f3e91709203f6b, type: 2}
+  gEvent: {fileID: 11400000, guid: 8c6a706ee9f36064aa1938580926997a, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8437919177390491912}
         m_TargetAssemblyTypeName: DD.AI.PlayerController, Assembly-CSharp
-        m_MethodName: GoToIdle
+        m_MethodName: GoToIdleState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

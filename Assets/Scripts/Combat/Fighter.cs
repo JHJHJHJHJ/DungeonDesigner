@@ -13,7 +13,7 @@ namespace DD.Combat
         [SerializeField] float attackRange = 1f;
         [SerializeField] float timeBetweenAttack = 1f;
 
-        [SerializeField] Health target;
+        Health target;
         float timeSinceLastAttack;
         Animator animator;
         AnimatorOverrider animatorOverrider;
