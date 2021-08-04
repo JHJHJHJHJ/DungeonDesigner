@@ -4596,8 +4596,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 498455166, guid: 1712253aba0c88649ace779856889570, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1712253aba0c88649ace779856889570, type: 3}
 --- !u!1001 &4481842593802728319
 PrefabInstance:
@@ -4608,7 +4607,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4481842594351054776, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
       propertyPath: coin
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4481842594351054777, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
       propertyPath: m_RootOrder

@@ -19,6 +19,11 @@ namespace DD.Object
         bool canInteract = true;
         bool isTarget = false;
 
+        private void Start() 
+        {
+            canInteract = true;
+            isTarget = false;    
+        }
 
         public bool CanInteract()
         {

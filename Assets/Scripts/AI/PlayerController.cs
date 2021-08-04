@@ -45,6 +45,8 @@ namespace DD.AI
         {
             if(state == PlayerState.Idle)
             {
+                isInteracting = false;
+
                 if(timeSinceIdle >= timeToIdle)
                 {
                     StartAction();
@@ -131,8 +133,7 @@ namespace DD.AI
         {
             currentTarget = null;
             timeSinceIdle = 0;
-            isInteracting = false;
-
+            
             state = PlayerState.Idle;
         }
 

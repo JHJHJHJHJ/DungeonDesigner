@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c00f7ef5b3faab44a0c7da176707c29, type: 3}
+  m_Name: PickUpRandomItems
+  m_EditorClassIdentifier: 
+  equipmentsToPickUp:
+  - {fileID: 11400000, guid: 8766af7f014b0f147a3b2df310f9d39a, type: 2}
+  - {fileID: 11400000, guid: 965404f4ed677cb40af3f5ce6a86445b, type: 2}
+  - {fileID: 11400000, guid: 4732127de082db0478e90c44d1483eef, type: 2}
+  - {fileID: 11400000, guid: 558d55862a6355046b54a703182abf46, type: 2}

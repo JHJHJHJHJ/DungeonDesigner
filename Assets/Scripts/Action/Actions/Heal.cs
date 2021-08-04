@@ -17,7 +17,7 @@ namespace DD.Action
             health.Heal(healAmount);
 
             myObject.EndActionWithThisObject();
-            
+            Destroy(myObject.gameObject);
             // health.StartCoroutine(HandleFX());
         }
 

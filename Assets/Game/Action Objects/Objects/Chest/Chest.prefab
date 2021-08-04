@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 342aa2b416ea9ac4fb794e9955d1f567, type: 2}
     - target: {fileID: 8213993750948562515, guid: bad18e3647864de44bc9c0fbf8c17401, type: 3}
+      propertyPath: action
+      value: 
+      objectReference: {fileID: 11400000, guid: 35a9fccd3ec3e1245820948844602f44, type: 2}
+    - target: {fileID: 8213993750948562515, guid: bad18e3647864de44bc9c0fbf8c17401, type: 3}
       propertyPath: actionMessage
       value: "\uBCF4\uBB3C\uC0C1\uC790\uB2E4!"
       objectReference: {fileID: 0}

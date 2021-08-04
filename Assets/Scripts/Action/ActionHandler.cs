@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DD.Object;
+using DD.Movement;
 
 namespace DD.Action
 {
@@ -15,8 +16,10 @@ namespace DD.Action
 
             if (myObject.IsTarget())
             {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<AnimatorOverrider>().UpdateAnimationClipByDirection(myObject.transform);
+                
                 action.Handle(myObject);
-                Destroy(gameObject);
             }
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DD.Core
 {
-    [CreateAssetMenu(fileName = "New DDEvent", menuName = "DungeonDesigner/DDEvent", order = 0)]
+    [CreateAssetMenu(fileName = "DDEvent", menuName = "DungeonDesigner/DDEvent", order = 0)]
     public class DDEvent : ScriptableObject
     {
         List<DDEventListener> elisteners = new List<DDEventListener>();
