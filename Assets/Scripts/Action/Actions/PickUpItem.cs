@@ -3,6 +3,7 @@ using DD.Combat;
 using System.Collections;
 using DD.Object;
 using DD.Inventory;
+using DD.FX;
 
 namespace DD.Action
 {
@@ -33,10 +34,11 @@ namespace DD.Action
                 }
 
                 inventoryHandler.AddEquippment(equipmentToPickUp);
+                FindObjectOfType<FXMessage>().Show(equipmentToPickUp.myName + "를(을) 얻었다!" + "\n" + equipmentToPickUp.description);
             }
             else
             {
-                //Do NOTHING
+                FindObjectOfType<FXMessage>().Show("인벤토리가 가득 찼습니다.");
             }
 
             myObject.EndActionWithThisObject();

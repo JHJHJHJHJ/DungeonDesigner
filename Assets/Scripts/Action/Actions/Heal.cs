@@ -2,6 +2,7 @@ using UnityEngine;
 using DD.Combat;
 using System.Collections;
 using DD.Object;
+using DD.FX;
 
 namespace DD.Action
 {
@@ -18,6 +19,9 @@ namespace DD.Action
 
             myObject.EndActionWithThisObject();
             Destroy(myObject.gameObject);
+
+            FindObjectOfType<FXMessage>().Show("체력을 모두 회복했다!");
+
             // health.StartCoroutine(HandleFX());
         }
 

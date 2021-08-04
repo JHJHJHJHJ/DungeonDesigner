@@ -22,6 +22,7 @@ namespace DD.AI
         AnimatorOverrideController overrideController;
         Fighter fighter;
         Mover mover;
+        Health health;
 
         ActionObject currentTarget = null;
         float timeSinceIdle = Mathf.Infinity;
@@ -33,6 +34,7 @@ namespace DD.AI
             animator = GetComponent<Animator>();
             fighter = GetComponent<Fighter>();
             mover = GetComponent<Mover>();
+            health = GetComponent<Health>();
         }
 
         private void Start()
@@ -43,6 +45,8 @@ namespace DD.AI
 
         private void Update()
         {
+            if(health.IsDead()) return;
+
             if(state == PlayerState.Idle)
             {
                 isInteracting = false;
@@ -65,7 +69,7 @@ namespace DD.AI
                     MoveToInteract();
                 }
 
-                // Fight와 Interact는 별도의 class에서에서 실행   
+                // Fight와 다른 Action은 별도의 class에서에서 실행   
             }
         }
 

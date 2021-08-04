@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038abe109c3965b4ea922841af48dc8c, type: 3}
   m_Name: Speed Ring
   m_EditorClassIdentifier: 
-  myName: "\uAC00\uBCBC\uC6B4 \uBC18\uC9C0"
+  myName: "\uBC14\uB78C\uC758 \uBC18\uC9C0"
   sprite: {fileID: 21300000, guid: dfbfc70a5a011684eb65fa1209588876, type: 3}
-  description: "\uACF5\uACA9\uC18D\uB3C4 <color=#ff0000ff>+20%</color>"
+  description: "<color=#FFFB6B>\uACF5\uACA9\uC18D\uB3C4 UP!</color>"
   equipStats:
     damage: 0
     attackSpeed: 20

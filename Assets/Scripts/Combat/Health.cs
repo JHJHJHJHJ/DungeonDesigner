@@ -5,6 +5,8 @@ using MoreMountains.Feedbacks;
 using DD.Object;
 using DD.PlayState;
 using DD.Core;
+using DD.FX;
+using DD.Inventory;
 
 namespace DD.Combat
 {
@@ -25,7 +27,13 @@ namespace DD.Combat
         public void TakeDamage(float damage)
         {
             hitFeedback.PlayFeedbacks();
-            healthPoints = Mathf.Max(healthPoints - damage, 0);
+
+            InventoryHandler inventoryHandler = GetComponent<InventoryHandler>();
+            float damageToTake;
+            if(inventoryHandler) damageToTake = Mathf.Max(damage - inventoryHandler.GetInventoryArmor(), 1);
+            else damageToTake = damage;
+
+            healthPoints = Mathf.Max(healthPoints - damageToTake, 0);
             if(healthPoints == 0)
             {
                 Die();
@@ -50,9 +58,14 @@ namespace DD.Combat
                 actionObject.EndActionWithThisObject();
 
                 FindObjectOfType<PlayData>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
+                FindObjectOfType<FXMessage>().Show("적을 쓰러뜨렸다!");
 
                 Destroy(gameObject, 1f);
             }    
+            else
+            {
+                FindObjectOfType<FXMessage>().Show("전투에서 패배했다." + "\n" + "눈 앞이 캄캄해졌다...");
+            }
         }
 
         public bool IsDead()

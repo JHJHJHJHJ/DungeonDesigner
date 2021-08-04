@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DD.Core;
+using DD.Inventory;
 
 namespace DD.Movement
 {
@@ -14,11 +15,13 @@ namespace DD.Movement
         Animator animator;
         AnimatorOverrideController overrideController;
         AnimatorOverrider animatorOverrider;
+        InventoryHandler inventoryHandler;
 
         private void Awake()
         {
             animator = GetComponent<Animator>();
             animatorOverrider = GetComponent<AnimatorOverrider>();
+            inventoryHandler = GetComponent<InventoryHandler>();
         }
 
         private void Update()
@@ -52,13 +55,22 @@ namespace DD.Movement
             if (destination == null) return;
 
             animatorOverrider.UpdateAnimationClipByDirection(destination);
-            transform.position = Vector2.MoveTowards(transform.position, destination.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, destination.position, GetMoveSpeed() * Time.deltaTime);
         }
 
         public void Cancel()
         {
             destination = null;
             animator.SetBool("isWalking", false);
+        }
+
+        float GetMoveSpeed()
+        {
+            if(inventoryHandler)
+            {
+                return speed * (100f + inventoryHandler.GetInventorymoveSpeed()) / 100f;
+            }
+            return speed;
         }
     }
 }

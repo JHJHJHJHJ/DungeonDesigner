@@ -4,6 +4,8 @@ using UnityEngine;
 using DD.Movement;
 using DD.Core;
 using DD.Object;
+using DD.FX;
+using DD.Inventory;
 
 namespace DD.Combat
 {
@@ -18,12 +20,14 @@ namespace DD.Combat
         Animator animator;
         AnimatorOverrider animatorOverrider;
         Mover mover;
+        InventoryHandler inventoryHandler;
 
-        private void Awake() 
+        private void Awake()
         {
             animator = GetComponent<Animator>();
             animatorOverrider = GetComponent<AnimatorOverrider>();
             mover = GetComponent<Mover>();
+            inventoryHandler = GetComponent<InventoryHandler>();
         }
 
         private void Update()
@@ -46,11 +50,11 @@ namespace DD.Combat
 
         void AttackBehaviour()
         {
-            if(target == null) return;
+            if (target == null) return;
 
             animatorOverrider.UpdateAnimationClipByDirection(target.transform);
 
-            if(timeSinceLastAttack >= timeBetweenAttack)
+            if (timeSinceLastAttack >= timeBetweenAttack)
             {
                 // This will trigger 'Hit' event.
                 animator.ResetTrigger("Attack");
@@ -61,7 +65,7 @@ namespace DD.Combat
 
         public bool CanAttack(GameObject combatTarget)
         {
-            if(combatTarget == null) return false;
+            if (combatTarget == null) return false;
 
             Health targetToTest = combatTarget.GetComponent<Health>();
             return targetToTest != null && !targetToTest.IsDead();
@@ -71,6 +75,11 @@ namespace DD.Combat
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
+
+            if (!target.CompareTag("Player"))
+            {
+                FindObjectOfType<FXMessage>().Show("전투를 시작했다!");
+            }
         }
 
         bool IsInRange()
@@ -85,16 +94,48 @@ namespace DD.Combat
 
             animator.SetBool("isFighting", false);
             timeSinceLastAttack = 0;
-            
+
             GetComponent<Mover>().Cancel();
         }
 
         void Hit()
         {
-            if(GetComponent<Health>().IsDead()) return;
+            if (GetComponent<Health>().IsDead()) return;
 
-            target.TakeDamage(damage);
-            if(target.IsDead()) Cancel();
-        } 
+            string message = "";
+            if (target != null && !target.CompareTag("Player"))
+            {
+                message = "적에게 " + GetDamage() + " 데미지!";
+            }
+            else
+            {
+                message = GetDamage() + " 데미지를 입었다!";
+            }
+            FindObjectOfType<FXMessage>().Show(message);
+
+            target.TakeDamage(GetDamage());
+
+            if (target.IsDead()) Cancel();
+        }
+
+        float GetDamage()
+        {
+            if (inventoryHandler)
+            {
+                return damage + inventoryHandler.GetInventoryDamage();
+            }
+
+            return damage;
+        }
+
+        float GetTimeBetweenAttack()
+        {
+            if (inventoryHandler)
+            {
+                return timeBetweenAttack * (100f - inventoryHandler.GetInventoryDamage()) / 100f;
+            }
+
+            return timeBetweenAttack;
+        }
     }
 }
