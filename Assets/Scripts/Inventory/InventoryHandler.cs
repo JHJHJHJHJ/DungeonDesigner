@@ -7,6 +7,7 @@ namespace DD.Inventory
     public class InventoryHandler : MonoBehaviour
     {
         [SerializeField] List<Equipment> equipments = new List<Equipment>();
+        [SerializeField] DDEvent equipChanged;
         EquipStats wholeEquipStats;
 
         private void Start() 
@@ -17,11 +18,19 @@ namespace DD.Inventory
 
         public void AddEquippment(Equipment equipmentToAdd)
         {
-            equipments.Add(equipmentToAdd);
-            UpdqteWholeEquipStats();
+            if(equipments.Count < 4)
+            {
+                equipments.Add(equipmentToAdd);
+                UpdqteWholeEquipStats();
+                equipChanged.Occurred();
+            }
+            else
+            {
+                // DO NOTHING
+            }
         }
 
-        public List<Equipment> GetEquippments()
+        public List<Equipment> GetCurrentEquippments()
         {
             return equipments;
         }

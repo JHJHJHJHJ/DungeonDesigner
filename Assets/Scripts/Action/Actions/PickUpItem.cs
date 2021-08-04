@@ -16,8 +16,28 @@ namespace DD.Action
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             InventoryHandler inventoryHandler = player.GetComponent<InventoryHandler>();
 
-            Equipment equipmentToPickUp = equipmentsToPickUp[Random.Range(0, equipmentsToPickUp.Length)];
-            inventoryHandler.AddEquippment(equipmentToPickUp);
+            if (inventoryHandler.GetCurrentEquippments().Count < 4)
+            {
+                Equipment equipmentToPickUp;
+                while (true)
+                {
+                    equipmentToPickUp = equipmentsToPickUp[Random.Range(0, equipmentsToPickUp.Length)];
+
+                    bool isDuplicate = false;
+                    foreach (Equipment equipment in inventoryHandler.GetCurrentEquippments())
+                    {
+                        if (equipmentToPickUp == equipment) isDuplicate = true;
+                    }
+
+                    if (!isDuplicate) break;
+                }
+
+                inventoryHandler.AddEquippment(equipmentToPickUp);
+            }
+            else
+            {
+                //Do NOTHING
+            }
 
             myObject.EndActionWithThisObject();
             Destroy(myObject.gameObject);

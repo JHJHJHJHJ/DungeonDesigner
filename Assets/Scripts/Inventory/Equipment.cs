@@ -5,9 +5,9 @@ namespace DD.Inventory
     [CreateAssetMenu(fileName = "Equipment", menuName = "DungeonDesigner/Equipment", order = 0)]
     public class Equipment : ScriptableObject
     {
-        [SerializeField] string myName;
-        [SerializeField] Sprite sprite;
-        [SerializeField] [TextArea] string description;
+        public string myName;
+        public Sprite sprite;
+        [TextArea] public string description;
         public EquipStats equipStats;
     }
 
