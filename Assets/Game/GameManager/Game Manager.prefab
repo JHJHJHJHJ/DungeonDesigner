@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107654648481500120}
   - component: {fileID: 107654648481500121}
+  - component: {fileID: 1739753416}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -43,3 +44,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617d1d23fbaf9a1408b85d5384273416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossEnemyPrefab: {fileID: 1731498139738818343, guid: e0924a6f2f229d345aa505c4eb8213b3, type: 3}
+  bossSpawnPos: {fileID: 0}
+--- !u!114 &1739753416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107654648481500119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a995ba7d763e294fbfec8994d0949c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gEvent: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 107654648481500121}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: SpawnBoss
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

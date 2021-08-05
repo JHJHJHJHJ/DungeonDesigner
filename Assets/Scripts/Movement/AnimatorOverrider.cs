@@ -15,6 +15,11 @@ namespace DD.Movement
         Animator animator;
         AnimatorOverrideController overrideController;
 
+        private void Start() 
+        {
+            SetAnimatorOverrider(Direction.down);
+        }
+
         private void Awake()
         {
             animator = GetComponent<Animator>();

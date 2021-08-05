@@ -5,9 +5,10 @@ using DD.FX;
 
 namespace DD.Inventory
 {
+    [RequireComponent(typeof(DDEventListener))]
     public class InventoryHandler : MonoBehaviour
     {
-        [SerializeField] int limitCount = 14;
+        [SerializeField] int limitCount = 12;
         [SerializeField] List<Equipment> equipments = new List<Equipment>();
         [SerializeField] DDEvent equipChanged;
         EquipStats wholeEquipStats;

@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 1839480267}
   - component: {fileID: 3640737501964078778}
   m_Layer: 0
-  m_Name: Mush
+  m_Name: Default Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
