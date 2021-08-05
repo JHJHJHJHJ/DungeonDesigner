@@ -102,6 +102,8 @@ namespace DD.AI
                 }
             }
 
+            if(actionObjects.Count <= 0) return null;
+
             ActionObject closeTarget = null;
             float closeTargetDistance = 0f;
 

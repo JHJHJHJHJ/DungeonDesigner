@@ -4,11 +4,17 @@ using UnityEngine;
 using DD.Object;
 using DD.AI;
 using DD.UI;
+using DD.FX;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] ActionObject bossEnemyPrefab;
     [SerializeField] Transform bossSpawnPos = null;
+
+    private void Start() 
+    {
+        
+    }
 
     public void SpawnBoss()
     {
