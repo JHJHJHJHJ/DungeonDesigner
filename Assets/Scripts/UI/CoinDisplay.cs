@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using DD.PlayState;
+using DD.PlayData;
 
 namespace DD.UI
 {
@@ -9,11 +9,11 @@ namespace DD.UI
         [SerializeField] TextMeshProUGUI textShadow = null;
         [SerializeField] TextMeshProUGUI text = null;
 
-        PlayData playData;
+        Resource playData;
 
         private void Awake() 
         {
-            playData = FindObjectOfType<PlayData>();    
+            playData = FindObjectOfType<Resource>();    
         }
 
         private void Update() 

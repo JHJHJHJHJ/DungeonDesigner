@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using DD.Object;
-using DD.PlayState;
 using DD.Core;
+using DD.PlayData;
 using DD.FX;
 using DD.Inventory;
 
@@ -19,6 +19,13 @@ namespace DD.Combat
 
         bool isDead = false;
 
+        InventoryHandler inventoryHandler;
+
+        private void Awake() 
+        {
+            inventoryHandler = GetComponent<InventoryHandler>();    
+        }
+
         private void Start() 
         {
             healthPoints = maxHealthPoints;    
@@ -28,12 +35,7 @@ namespace DD.Combat
         {
             hitFeedback.PlayFeedbacks();
 
-            InventoryHandler inventoryHandler = GetComponent<InventoryHandler>();
-            float damageToTake;
-            if(inventoryHandler) damageToTake = Mathf.Max(damage - inventoryHandler.GetInventoryArmor(), 1);
-            else damageToTake = damage;
-
-            healthPoints = Mathf.Max(healthPoints - damageToTake, 0);
+            healthPoints = Mathf.Max(healthPoints - GetDamageToTake(damage), 0);
             if(healthPoints == 0)
             {
                 Die();
@@ -42,7 +44,7 @@ namespace DD.Combat
 
         public void Heal(float heal)
         {
-            healthPoints = Mathf.Min(healthPoints + heal, maxHealthPoints);
+            healthPoints = Mathf.Min(healthPoints + heal, GetMaxHealthPoints());
         }
 
         void Die()
@@ -57,7 +59,7 @@ namespace DD.Combat
             {
                 actionObject.EndActionWithThisObject();
 
-                FindObjectOfType<PlayData>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
+                FindObjectOfType<Resource>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
                 FindObjectOfType<FXMessage>().Show("적을 쓰러뜨렸다!");
 
                 Destroy(gameObject, 1f);
@@ -80,7 +82,21 @@ namespace DD.Combat
 
         public float GetMaxHealthPoints()
         {
+            if(inventoryHandler)
+            {
+                return maxHealthPoints + inventoryHandler.GetInventoryMaxHealth();
+            }
             return maxHealthPoints;
+        }
+
+        public float GetDamageToTake(float damage)
+        {
+            float damageToTake;
+
+            if(inventoryHandler) damageToTake = Mathf.Max(damage - inventoryHandler.GetInventoryArmor(), 1);
+            else damageToTake = damage;
+
+            return damageToTake;
         }
     }
 }

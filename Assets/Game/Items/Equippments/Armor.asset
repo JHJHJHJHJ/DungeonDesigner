@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 038abe109c3965b4ea922841af48dc8c, type: 3}
-  m_Name: Long Sword
+  m_Name: Armor
   m_EditorClassIdentifier: 
-  myName: "\uC7A5\uAC80"
-  sprite: {fileID: 21300000, guid: c6d3589829327f84286e18f6e10e906a, type: 3}
-  description: "<color=#FFFB6B>\uACF5\uACA9\uB825 UP!</color>"
+  myName: "\uAC00\uC8FD \uAC11\uC637"
+  sprite: {fileID: 21300000, guid: 0d860efb2a6331c4e9534c98fcc64838, type: 3}
+  description: "<color=#FFFB6B>\uCD5C\uB300 \uCCB4\uB825 UP!</color>"
   equipStats:
-    damageUP: 2
+    damageUP: 0
     attackSpeedUP: 0
     armorUP: 0
     moveSpeedUP: 0
-    maxHealthUP: 0
+    maxHealthUP: 10

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DD.PlayState
+namespace DD.PlayData
 {
-    public class PlayData : MonoBehaviour
+    public class Resource : MonoBehaviour
     {
+        // Global
         [SerializeField] int coin = 0;
 
         public int GetCurrentCoin()

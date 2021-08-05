@@ -68,7 +68,7 @@ namespace DD.Movement
         {
             if(inventoryHandler)
             {
-                return speed * (100f + inventoryHandler.GetInventorymoveSpeed()) / 100f;
+                return speed * (100f + inventoryHandler.GetInventoryMoveSpeed()) / 100f;
             }
             return speed;
         }

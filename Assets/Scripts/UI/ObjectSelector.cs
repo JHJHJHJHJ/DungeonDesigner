@@ -5,7 +5,7 @@ using DD.Object;
 using DD.Level;
 using UnityEngine.UI;
 using TMPro;
-using DD.PlayState;
+using DD.PlayData;
 
 public class ObjectSelector : MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class ObjectSelector : MonoBehaviour
 
     // Reference
     ObjectSpawner objectSpawner;
-    PlayData playData;
+    Resource resource;
 
     // Status
     bool isSelected = false;
@@ -31,7 +31,7 @@ public class ObjectSelector : MonoBehaviour
     private void Awake()
     {
         objectSpawner = FindObjectOfType<ObjectSpawner>();
-        playData = FindObjectOfType<PlayData>();
+        resource = FindObjectOfType<Resource>();
     }
 
     private void Start()
@@ -60,7 +60,7 @@ public class ObjectSelector : MonoBehaviour
 
     bool CanSelect()
     {
-        return playData.GetCurrentCoin() >= objectToSelect.profile.cost;
+        return resource.GetCurrentCoin() >= objectToSelect.profile.cost;
     }
 
     public void ToggleSelector()

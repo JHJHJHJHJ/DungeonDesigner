@@ -3,7 +3,7 @@ using System.Collections;
 using DD.Object;
 using DD.AI;
 using TMPro;
-using DD.PlayState;
+using DD.PlayData;
 
 namespace DD.Level
 {
@@ -71,7 +71,7 @@ namespace DD.Level
                 actionObject.GetComponent<EnemyController>().SetPlayer(player);
             }
 
-            FindObjectOfType<PlayData>().UseCoin(objectToSpawn.profile.cost);
+            FindObjectOfType<Resource>().UseCoin(objectToSpawn.profile.cost);
         }
 
         public void Activate(ActionObject objectToSpawn)

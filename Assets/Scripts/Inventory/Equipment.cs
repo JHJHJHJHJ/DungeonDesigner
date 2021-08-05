@@ -14,18 +14,20 @@ namespace DD.Inventory
     [System.Serializable]
     public class EquipStats
     {
-        public float damage;
-        public float attackSpeed;
-        public float armor;
-        public float moveSpeed;
+        public float damageUP;
+        public float attackSpeedUP;
+        public float armorUP;
+        public float moveSpeedUP;
+        public float maxHealthUP;
 
 
         public void Initialize()
         {
-            damage = 0f;
-            attackSpeed = 0f;
-            armor = 0f;
-            moveSpeed = 0f;
+            damageUP = 0f;
+            attackSpeedUP = 0f;
+            armorUP = 0f;
+            moveSpeedUP = 0f;
+            maxHealthUP = 0f;
         }
     }
 }

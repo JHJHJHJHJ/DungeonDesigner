@@ -15,5 +15,5 @@ MonoBehaviour:
   equipmentsToPickUp:
   - {fileID: 11400000, guid: 8766af7f014b0f147a3b2df310f9d39a, type: 2}
   - {fileID: 11400000, guid: 965404f4ed677cb40af3f5ce6a86445b, type: 2}
-  - {fileID: 11400000, guid: 4732127de082db0478e90c44d1483eef, type: 2}
   - {fileID: 11400000, guid: 558d55862a6355046b54a703182abf46, type: 2}
+  - {fileID: 11400000, guid: 9b8880c9f21a3e14189907fd3d846604, type: 2}

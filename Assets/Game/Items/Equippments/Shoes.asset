@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038abe109c3965b4ea922841af48dc8c, type: 3}
   m_Name: Shoes
   m_EditorClassIdentifier: 
-  myName: "\uC18D\uB3C4\uC758 \uC7A5\uD654"
+  myName: "\uAC00\uC8FD \uC7A5\uD654"
   sprite: {fileID: 21300000, guid: 9f49ad25412f1a440a7a588519aa0e97, type: 3}
   description: "<color=#FFFB6B>\uC774\uB3D9\uC18D\uB3C4 UP!</color>"
   equipStats:
-    damage: 0
-    attackSpeed: 0
-    armor: 0
-    moveSpeed: 75
+    damageUP: 0
+    attackSpeedUP: 0
+    armorUP: 0
+    moveSpeedUP: 50
+    maxHealthUP: 0

@@ -8,7 +8,7 @@ namespace DD.UI
 {
     public class InventoryDisplay : MonoBehaviour
     {
-        [SerializeField] Image[] equipmentImages = null;
+        [SerializeField] EquipmentDisplay[] equipDisplays = null;
 
         GameObject player;
         InventoryHandler inventoryHandler;
@@ -28,15 +28,15 @@ namespace DD.UI
         {
             List<Equipment> currentEquipments = inventoryHandler.GetCurrentEquippments();
 
-            foreach (Image image in equipmentImages)
+            foreach (EquipmentDisplay equipDisplay in equipDisplays)
             {
-                image.gameObject.SetActive(false);
+                equipDisplay.gameObject.SetActive(false);
             }
 
             for (int i = 0; i < currentEquipments.Count; i++)
             {
-                equipmentImages[i].gameObject.SetActive(true);
-                equipmentImages[i].sprite = currentEquipments[i].sprite;
+                equipDisplays[i].gameObject.SetActive(true);
+                equipDisplays[i].UpdateImage(currentEquipments[i].sprite);
             }
         }
     }

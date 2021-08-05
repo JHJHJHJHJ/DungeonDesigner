@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using DD.Core;
+using DD.FX;
 
 namespace DD.Inventory
 {
     public class InventoryHandler : MonoBehaviour
     {
+        [SerializeField] int limitCount = 14;
         [SerializeField] List<Equipment> equipments = new List<Equipment>();
         [SerializeField] DDEvent equipChanged;
         EquipStats wholeEquipStats;
@@ -18,15 +20,17 @@ namespace DD.Inventory
 
         public void AddEquippment(Equipment equipmentToAdd)
         {
-            if(equipments.Count < 4)
+            if(equipments.Count < limitCount)
             {
                 equipments.Add(equipmentToAdd);
                 UpdqteWholeEquipStats();
                 equipChanged.Occurred();
+
+                FindObjectOfType<FXMessage>().Show(equipmentToAdd.myName + "을(를) 얻었다!" + "\n" + equipmentToAdd.description);
             }
             else
             {
-                // DO NOTHING
+                FindObjectOfType<FXMessage>().Show("인벤토리가 가득 찼습니다.");
             }
         }
 
@@ -37,22 +41,27 @@ namespace DD.Inventory
 
         public float GetInventoryDamage()
         {
-            return wholeEquipStats.damage;
+            return wholeEquipStats.damageUP;
         }
 
         public float GetInventoryAttackSpeed()
         {
-            return wholeEquipStats.attackSpeed;
+            return wholeEquipStats.attackSpeedUP;
         }
 
         public float GetInventoryArmor()
         {
-            return wholeEquipStats.armor;
+            return wholeEquipStats.armorUP;
         }
 
-        public float GetInventorymoveSpeed()
+        public float GetInventoryMoveSpeed()
         {
-            return wholeEquipStats.moveSpeed;
+            return wholeEquipStats.moveSpeedUP;
+        }
+
+        public float GetInventoryMaxHealth()
+        {
+            return wholeEquipStats.maxHealthUP;
         }
 
         void UpdqteWholeEquipStats()
@@ -61,10 +70,11 @@ namespace DD.Inventory
 
             foreach (Equipment equipment in equipments)
             {
-                wholeEquipStats.damage += equipment.equipStats.damage;
-                wholeEquipStats.attackSpeed += equipment.equipStats.attackSpeed;
-                wholeEquipStats.armor += equipment.equipStats.armor;
-                wholeEquipStats.moveSpeed += equipment.equipStats.moveSpeed;
+                wholeEquipStats.damageUP += equipment.equipStats.damageUP;
+                wholeEquipStats.attackSpeedUP += equipment.equipStats.attackSpeedUP;
+                wholeEquipStats.armorUP += equipment.equipStats.armorUP;
+                wholeEquipStats.moveSpeedUP += equipment.equipStats.moveSpeedUP;
+                wholeEquipStats.maxHealthUP += equipment.equipStats.maxHealthUP;
             }
         }
     }

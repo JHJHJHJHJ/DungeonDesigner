@@ -10,6 +10,7 @@ namespace DD.UI
         [SerializeField] Health health = null;
         [SerializeField] ProceduralImage bar = null;
         [SerializeField] ProceduralImage barEmpty = null;
+        [SerializeField] TextMeshProUGUI healthText = null;
         [SerializeField] Color barColorGreen;
         [SerializeField] Color barEmptyColorGreen;
         [SerializeField] Color barColorRed;
@@ -35,6 +36,8 @@ namespace DD.UI
                 bar.color = barColorGreen;
                 barEmpty.color = barEmptyColorGreen;
             }
+
+            healthText.text = health.GetHealthPoints() + "/" + health.GetMaxHealthPoints();
         }
     }
 }

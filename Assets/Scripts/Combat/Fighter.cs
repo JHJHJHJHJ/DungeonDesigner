@@ -54,7 +54,7 @@ namespace DD.Combat
 
             animatorOverrider.UpdateAnimationClipByDirection(target.transform);
 
-            if (timeSinceLastAttack >= timeBetweenAttack)
+            if (timeSinceLastAttack >= GetTimeBetweenAttack())
             {
                 // This will trigger 'Hit' event.
                 animator.ResetTrigger("Attack");
@@ -109,7 +109,7 @@ namespace DD.Combat
             }
             else
             {
-                message = GetDamage() + " 데미지를 입었다!";
+                message = target.GetDamageToTake(damage) + " 데미지를 입었다!";
             }
             FindObjectOfType<FXMessage>().Show(message);
 
@@ -132,7 +132,8 @@ namespace DD.Combat
         {
             if (inventoryHandler)
             {
-                return timeBetweenAttack * (100f - inventoryHandler.GetInventoryDamage()) / 100f;
+                float modifier = 100f / (inventoryHandler.GetInventoryAttackSpeed() + 100f);
+                return timeBetweenAttack * modifier;
             }
 
             return timeBetweenAttack;

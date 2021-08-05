@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038abe109c3965b4ea922841af48dc8c, type: 3}
   m_Name: Buckler
   m_EditorClassIdentifier: 
-  myName: "\uBC84\uD074\uB7EC"
+  myName: "\uB098\uBB34 \uBC29\uD328"
   sprite: {fileID: 21300000, guid: 4a15851a9e1eb0d42a31bb0eba7fe738, type: 3}
   description: "<color=#FFFB6B>\uBC29\uC5B4\uB825 UP!</color> "
   equipStats:
-    damage: 0
-    attackSpeed: 0
-    armor: 1
-    moveSpeed: 0
+    damageUP: 0
+    attackSpeedUP: 0
+    armorUP: 1
+    moveSpeedUP: 0
+    maxHealthUP: 0
