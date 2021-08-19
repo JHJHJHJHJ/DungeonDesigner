@@ -7,6 +7,7 @@ namespace DD.FX
 {
     public class FXMessage : MonoBehaviour
     {
+        [SerializeField] TextMeshProUGUI messageFrame;
         [SerializeField] TextMeshProUGUI message;
         [SerializeField] float timeToShow = 1f;
         float remainingTime;
@@ -15,19 +16,20 @@ namespace DD.FX
 
         private void Start() 
         {
-            message.gameObject.SetActive(false);    
+            messageFrame.gameObject.SetActive(false);    
         }
 
         private void Update() 
         {
             if(remainingTime > 0)
             {
-                message.gameObject.SetActive(true);
+                messageFrame.gameObject.SetActive(true);
+                messageFrame.text = currentText;
                 message.text = currentText;
             }    
             else
             {
-                message.gameObject.SetActive(false);
+                messageFrame.gameObject.SetActive(false);
             }
 
             remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0f);

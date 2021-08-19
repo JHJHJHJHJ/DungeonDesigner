@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SpawnBoss()
+    public void SpawnBoss() // Event Listener에서 실행됨
     {
         EnemyController bossEnemy = Instantiate(bossEnemyPrefab, bossSpawnPos.position, Quaternion.identity).GetComponent<EnemyController>();
         bossEnemy.SetPlayer(FindObjectOfType<PlayerController>().gameObject);
