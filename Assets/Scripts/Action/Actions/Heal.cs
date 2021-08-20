@@ -13,14 +13,14 @@ namespace DD.Action
 
         public override void Handle(ActionObject myObject)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = GetMyPlayer(myObject);
             Health health = player.GetComponent<Health>();
             health.Heal(healAmount);
 
             myObject.EndActionWithThisObject();
             Destroy(myObject.gameObject);
 
-            FindObjectOfType<FXMessage>().Show("체력을 모두 회복했다!");
+            // FindObjectOfType<FXMessage>().Show("체력을 모두 회복했다!");
 
             // health.StartCoroutine(HandleFX());
         }

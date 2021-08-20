@@ -64,12 +64,8 @@ namespace DD.Level
 
         void Spawn(Vector2 spawnPos)
         {
-            ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity);
-
-            if (actionObject.type == ObjectType.enemy)
-            {
-                actionObject.GetComponent<EnemyController>().SetPlayer(player);
-            }
+            ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity, 
+                groundChecker.GetCurrentObjectsParent());
 
             FindObjectOfType<Resource>().UseCoin(objectToSpawn.profile.cost);
         }

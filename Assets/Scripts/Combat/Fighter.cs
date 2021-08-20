@@ -76,10 +76,10 @@ namespace DD.Combat
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
 
-            if (!target.CompareTag("Player"))
-            {
-                FindObjectOfType<FXMessage>().Show("전투를 시작했다!");
-            }
+            // if (!target.CompareTag("Player"))
+            // {
+            //     FindObjectOfType<FXMessage>().Show("전투를 시작했다!");
+            // }
         }
 
         bool IsInRange()
@@ -102,16 +102,16 @@ namespace DD.Combat
         {
             if (GetComponent<Health>().IsDead()) return;
 
-            string message = "";
-            if (target != null && !target.CompareTag("Player"))
-            {
-                message = "적에게 " + GetDamage() + " 데미지!";
-            }
-            else
-            {
-                message = target.GetDamageToTake(damage) + " 데미지를 입었다!";
-            }
-            FindObjectOfType<FXMessage>().Show(message);
+            // string message = "";
+            // if (target != null && !target.CompareTag("Player"))
+            // {
+            //     message = "적에게 " + GetDamage() + " 데미지!";
+            // }
+            // else
+            // {
+            //     message = target.GetDamageToTake(damage) + " 데미지를 입었다!";
+            // }
+            // FindObjectOfType<FXMessage>().Show(message);
 
             target.TakeDamage(GetDamage());
 

@@ -2,28 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundChecker : MonoBehaviour
+namespace DD.Level
 {
-    bool isOnGround = false;
-
-    private void OnTriggerEnter2D(Collider2D other) 
+    public class GroundChecker : MonoBehaviour
     {
-        if(other.CompareTag("Ground"))
+        bool isOnGround = false;
+        Transform currentObjectsParent = null;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            isOnGround = true;
-        }    
-    }
+            if (other.CompareTag("Ground"))
+            {
+                currentObjectsParent = other.GetComponent<Dungeon>().GetObjectsParent();
+                isOnGround = true;
+            }
+        }
 
-    private void OnTriggerExit2D(Collider2D other) 
-    {
-        if(other.CompareTag("Ground"))
+        private void OnTriggerExit2D(Collider2D other)
         {
-            isOnGround = false;
-        }    
+            if (other.CompareTag("Ground"))
+            {
+                currentObjectsParent = null;
+                isOnGround = false;
+            }
+        }
+
+        public bool IsOnGround()
+        {
+            return isOnGround;
+        }
+
+        public Transform GetCurrentObjectsParent()
+        {
+            return currentObjectsParent;
+        }
     }
 
-    public bool IsOnGround()
-    {
-        return isOnGround;
-    }
 }

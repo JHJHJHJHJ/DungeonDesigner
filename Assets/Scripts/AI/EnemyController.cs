@@ -27,8 +27,7 @@ namespace DD.AI
 
         private void Start()
         {
-            // player = GameObject.FindGameObjectWithTag("Player");
-            // GetComponent<AnimatorOverrider>().SetAnimatorOverrider(Direction.up);
+            SetPlayer();
         }
 
         private void Update()
@@ -58,9 +57,15 @@ namespace DD.AI
             return distanceToPlayer <= chaseDistance;
         }
 
-        public void SetPlayer(GameObject player)
+        void SetPlayer()
         {
-            this.player = player;
+            foreach(Transform child in transform.parent)
+            {
+                if(child.CompareTag("Player"))
+                {
+                    player = child.gameObject;
+                }
+            }
         }
     }
 }

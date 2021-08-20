@@ -45,13 +45,13 @@ namespace DD.AI
 
         private void Update()
         {
-            if(health.IsDead()) return;
+            if (health.IsDead()) return;
 
-            if(state == PlayerState.Idle)
+            if (state == PlayerState.Idle)
             {
                 isInteracting = false;
 
-                if(timeSinceIdle >= timeToIdle)
+                if (timeSinceIdle >= timeToIdle)
                 {
                     StartAction();
                 }
@@ -60,11 +60,11 @@ namespace DD.AI
                     timeSinceIdle += Time.deltaTime;
                 }
             }
-            else if(state == PlayerState.Interact)
+            else if (state == PlayerState.Interact)
             {
-                if(currentTarget.type == ObjectType.enemy) return;
+                if (currentTarget.type == ObjectType.enemy) return;
 
-                if(!isInteracting)
+                if (!isInteracting)
                 {
                     MoveToInteract();
                 }
@@ -94,15 +94,20 @@ namespace DD.AI
         public ActionObject FindCloseTarget()
         {
             List<ActionObject> actionObjects = new List<ActionObject>();
-            foreach(ActionObject actionObject in FindObjectsOfType<ActionObject>())
+
+            foreach (Transform child in transform.parent)
             {
-                if(actionObject.CanInteract())
+                ActionObject actionObject = child.GetComponent<ActionObject>();
+                if (actionObject != null)
                 {
-                    actionObjects.Add(actionObject);
+                    if (actionObject.CanInteract())
+                    {
+                        actionObjects.Add(actionObject);
+                    }
                 }
             }
 
-            if(actionObjects.Count <= 0) return null;
+            if (actionObjects.Count <= 0) return null;
 
             ActionObject closeTarget = null;
             float closeTargetDistance = 0f;
@@ -139,7 +144,7 @@ namespace DD.AI
         {
             currentTarget = null;
             timeSinceIdle = 0;
-            
+
             state = PlayerState.Idle;
         }
 

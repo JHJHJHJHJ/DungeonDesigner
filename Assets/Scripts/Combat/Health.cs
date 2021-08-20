@@ -60,13 +60,13 @@ namespace DD.Combat
                 actionObject.EndActionWithThisObject();
 
                 FindObjectOfType<Resource>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
-                FindObjectOfType<FXMessage>().Show("적을 쓰러뜨렸다!");
+                // FindObjectOfType<FXMessage>().Show("적을 쓰러뜨렸다!");
 
                 Destroy(gameObject, 1f);
             }    
             else
             {
-                FindObjectOfType<FXMessage>().Show("전투에서 패배했다." + "\n" + "눈 앞이 캄캄해졌다...");
+                // FindObjectOfType<FXMessage>().Show("전투에서 패배했다." + "\n" + "눈 앞이 캄캄해졌다...");
             }
         }
 

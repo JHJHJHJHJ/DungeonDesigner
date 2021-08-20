@@ -27,11 +27,11 @@ namespace DD.Inventory
                 UpdqteWholeEquipStats();
                 equipChanged.Occurred();
 
-                FindObjectOfType<FXMessage>().Show(equipmentToAdd.myName + "을(를) 얻었다!" + "\n" + equipmentToAdd.description);
+                // FindObjectOfType<FXMessage>().Show(equipmentToAdd.myName + "을(를) 얻었다!" + "\n" + equipmentToAdd.description);
             }
             else
             {
-                FindObjectOfType<FXMessage>().Show("인벤토리가 가득 찼습니다.");
+                // FindObjectOfType<FXMessage>().Show("인벤토리가 가득 찼습니다.");
             }
         }
 

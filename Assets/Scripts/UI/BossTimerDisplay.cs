@@ -12,7 +12,7 @@ public class BossTimerDisplay : MonoBehaviour
 
     private void Awake() 
     {
-        timer = FindObjectOfType<Timer>();    
+        timer = GetComponent<Timer>();    
     }
 
     private void Update() 

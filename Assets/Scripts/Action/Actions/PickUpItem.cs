@@ -14,7 +14,7 @@ namespace DD.Action
 
         public override void Handle(ActionObject myObject)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = GetMyPlayer(myObject);
             InventoryHandler inventoryHandler = player.GetComponent<InventoryHandler>();
 
             Equipment equipmentToPickUp;
