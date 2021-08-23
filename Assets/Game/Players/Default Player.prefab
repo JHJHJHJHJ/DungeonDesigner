@@ -358,6 +358,7 @@ MonoBehaviour:
   floatingPos: {fileID: 2886888872887160324}
   hitFeedback: {fileID: 517195643}
   spriteRenderer: {fileID: 5847650068456554459}
+  dungeonEnded: {fileID: 11400000, guid: e62e1d2f299dde14aadb78b3eed598dc, type: 2}
 --- !u!114 &1572470650602235528
 MonoBehaviour:
   m_ObjectHideFlags: 0

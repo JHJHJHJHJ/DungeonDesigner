@@ -10225,6 +10225,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3949172168691696611, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: timerEnded
+      value: 
+      objectReference: {fileID: 11400000, guid: 8286eca760140474aaa5f4b8cf4fa1d7, type: 2}
+    - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: gEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 8286eca760140474aaa5f4b8cf4fa1d7, type: 2}
     - target: {fileID: 5627987750582289526, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: gEvent
       value: 
