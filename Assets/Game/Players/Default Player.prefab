@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 8875273298473454652}
   - component: {fileID: 2485250834695295426}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Default Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc9f4f76b322e345869dba0ee875f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limitCount: 12
+  limitCount: 3
   equipments: []
   equipChanged: {fileID: 11400000, guid: 19bb00902d6fcc04d9f71dab13950187, type: 2}
 --- !u!114 &2485250834695295426

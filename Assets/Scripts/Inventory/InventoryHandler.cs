@@ -13,7 +13,7 @@ namespace DD.Inventory
         [SerializeField] DDEvent equipChanged;
         EquipStats wholeEquipStats;
 
-        private void Start() 
+        private void Awake() 
         {
             wholeEquipStats = new EquipStats();
             wholeEquipStats.Initialize();    
@@ -35,35 +35,17 @@ namespace DD.Inventory
             }
         }
 
-        public List<Equipment> GetCurrentEquippments()
-        {
-            return equipments;
-        }
+        public List<Equipment> GetCurrentEquippments() { return equipments; }
 
-        public float GetInventoryDamage()
-        {
-            return wholeEquipStats.damageUP;
-        }
+        public float GetInventoryDamage() { return wholeEquipStats.damageUP; }
 
-        public float GetInventoryAttackSpeed()
-        {
-            return wholeEquipStats.attackSpeedUP;
-        }
+        public float GetInventoryAttackSpeed() { return wholeEquipStats.attackSpeedUP; }
 
-        public float GetInventoryArmor()
-        {
-            return wholeEquipStats.armorUP;
-        }
+        public float GetInventoryArmor() { return wholeEquipStats.armorUP; }
 
-        public float GetInventoryMoveSpeed()
-        {
-            return wholeEquipStats.moveSpeedUP;
-        }
+        public float GetInventoryMoveSpeed() { return wholeEquipStats.moveSpeedUP; }
 
-        public float GetInventoryMaxHealth()
-        {
-            return wholeEquipStats.maxHealthUP;
-        }
+        public float GetInventoryMaxHealth() { return wholeEquipStats.maxHealthUP; }
 
         void UpdqteWholeEquipStats()
         {

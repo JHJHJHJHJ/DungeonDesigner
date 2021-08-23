@@ -21,6 +21,9 @@ namespace DD.Combat
         [SerializeField] MMFeedbacks hitFeedback = null; 
         [Space]
         [SerializeField] SpriteRenderer spriteRenderer = null;
+
+        [Header("DDEvent")]
+        [SerializeField] DDEvent dungeonEnded = null;
         
 
         float healthPoints = 100f;
@@ -42,7 +45,7 @@ namespace DD.Combat
         {
             hitFeedback.PlayFeedbacks();
             DamageText damageText = Instantiate(damageTextPrefab, floatingPos.position, Quaternion.identity);
-            damageText.SetText(damage);
+            damageText.SetText(GetDamageToTake(damage));
 
             healthPoints = Mathf.Max(healthPoints - GetDamageToTake(damage), 0);
             if(healthPoints == 0)
@@ -64,17 +67,26 @@ namespace DD.Combat
             spriteRenderer.gameObject.SetActive(false);
 
             ActionObject actionObject = GetComponent<ActionObject>();
-            if(actionObject != null)
+            if(actionObject != null) // Enemy
             {
                 actionObject.EndActionWithThisObject();
 
                 FindObjectOfType<Resource>().AddCoin(actionObject.GetComponent<Enemy>().dropCoin);
                 // FindObjectOfType<FXMessage>().Show("적을 쓰러뜨렸다!");
 
+                if(actionObject.CompareTag("Boss"))
+                {
+                    dungeonEnded.Occurred();
+                    print("승리!");
+                }
+
                 Destroy(gameObject, 1f);
             }    
-            else
+            else // Player
             {
+                dungeonEnded.Occurred();
+                print("패배...");
+
                 // FindObjectOfType<FXMessage>().Show("전투에서 패배했다." + "\n" + "눈 앞이 캄캄해졌다...");
             }
         }

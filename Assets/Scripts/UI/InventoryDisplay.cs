@@ -10,17 +10,17 @@ namespace DD.UI
     {
         [SerializeField] EquipmentDisplay[] equipDisplays = null;
 
-        [SerializeField] GameObject player;
         InventoryHandler inventoryHandler;
 
-        private void Awake() 
+        public void SetPlayer(GameObject player)
         {
             inventoryHandler = player.GetComponent<InventoryHandler>();
+            UpdateDisplay();
         }
 
         private void Start()
         {
-            UpdateDisplay();
+            // UpdateDisplay();
         }
 
         public void UpdateDisplay() // Event Handler에서 실행됨

@@ -7,10 +7,15 @@ namespace DD.UI
 {
     public class HealthDisplay : MonoBehaviour
     {
+        [Header("Target")]
         [SerializeField] Health health = null;
+
+        [Header("Components")]
         [SerializeField] ProceduralImage bar = null;
         [SerializeField] ProceduralImage barEmpty = null;
         [SerializeField] TextMeshProUGUI healthText = null;
+
+        [Header("Colors")]
         [SerializeField] Color barColorGreen;
         [SerializeField] Color barEmptyColorGreen;
         [SerializeField] Color barColorRed;
@@ -18,6 +23,12 @@ namespace DD.UI
 
         private void Update()
         {
+            UpdateBar();
+        }
+
+        public void SetPlayer(GameObject player)
+        {
+            health = player.GetComponent<Health>();
             UpdateBar();
         }
 

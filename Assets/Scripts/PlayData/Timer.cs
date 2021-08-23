@@ -34,5 +34,11 @@ namespace DD.PlayData
         {
             return timeSinceGameStart;
         }
+
+        public void Reset()
+        {
+            timeSinceGameStart = 0f;
+            hasEnded = false;
+        }
     }
 }
