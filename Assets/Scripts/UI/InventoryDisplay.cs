@@ -10,12 +10,11 @@ namespace DD.UI
     {
         [SerializeField] EquipmentDisplay[] equipDisplays = null;
 
-        GameObject player;
+        [SerializeField] GameObject player;
         InventoryHandler inventoryHandler;
 
         private void Awake() 
         {
-            player = GameObject.FindGameObjectWithTag("Player");
             inventoryHandler = player.GetComponent<InventoryHandler>();
         }
 
@@ -30,12 +29,12 @@ namespace DD.UI
 
             foreach (EquipmentDisplay equipDisplay in equipDisplays)
             {
-                equipDisplay.gameObject.SetActive(false);
+                equipDisplay.SwitchImageObject(false);
             }
 
             for (int i = 0; i < currentEquipments.Count; i++)
             {
-                equipDisplays[i].gameObject.SetActive(true);
+                equipDisplays[i].SwitchImageObject(true);
                 equipDisplays[i].UpdateImage(currentEquipments[i].sprite);
             }
         }

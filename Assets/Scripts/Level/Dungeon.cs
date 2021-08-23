@@ -12,6 +12,11 @@ namespace DD.Level
         [SerializeField] Transform objectsParent = null;
         [SerializeField] GameObject bossTimer = null;
 
+        private void Start() 
+        {
+            
+        }
+
         public Transform GetObjectsParent()
         {
             return objectsParent;

@@ -12,11 +12,18 @@ namespace DD.Combat
 {
     public class Health : MonoBehaviour
     {
+        [Header("Status")]
         [SerializeField] float maxHealthPoints = 100f;
-        [SerializeField] float healthPoints = 100f;
-        [SerializeField] SpriteRenderer spriteRenderer = null;
-        [SerializeField] MMFeedbacks hitFeedback = null; 
 
+        [Header("Reference")]
+        [SerializeField] DamageText damageTextPrefab = null;
+        [SerializeField] Transform floatingPos = null;
+        [SerializeField] MMFeedbacks hitFeedback = null; 
+        [Space]
+        [SerializeField] SpriteRenderer spriteRenderer = null;
+        
+
+        float healthPoints = 100f;
         bool isDead = false;
 
         InventoryHandler inventoryHandler;
@@ -34,6 +41,8 @@ namespace DD.Combat
         public void TakeDamage(float damage)
         {
             hitFeedback.PlayFeedbacks();
+            DamageText damageText = Instantiate(damageTextPrefab, floatingPos.position, Quaternion.identity);
+            damageText.SetText(damage);
 
             healthPoints = Mathf.Max(healthPoints - GetDamageToTake(damage), 0);
             if(healthPoints == 0)
