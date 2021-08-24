@@ -48,14 +48,14 @@ namespace DD.Object
         public void StartActionWithThisObject()
         {
             SetTarget(true);
-            actionStarted.Occurred();
+            actionStarted.Occurred(this.gameObject);
         }
 
         public void EndActionWithThisObject()
         {
             SetCanInteract(false);
             SetTarget(false);
-            actionEnded.Occurred();
+            actionEnded.Occurred(this.gameObject);
         }
     }
 

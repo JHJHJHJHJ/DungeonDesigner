@@ -356,10 +356,9 @@ MonoBehaviour:
   - {fileID: 906630996}
   - {fileID: 1834690375}
   - {fileID: 1635014644}
+  dungeonWave: {fileID: 11400000, guid: 0388092d9a5b08c48ad421a0855868ef, type: 2}
   equipChanged:
   - {fileID: 11400000, guid: 19bb00902d6fcc04d9f71dab13950187, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &494337331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6738614576455012651, guid: a21681ae3c6703647b9ce525a3a18e42, type: 3}
@@ -637,9 +636,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon (0)
       objectReference: {fileID: 0}
-    - target: {fileID: 3949172168366827991, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 3949172168691696611, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: timeToSpawnBoss
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
@@ -9605,7 +9604,7 @@ PrefabInstance:
     - target: {fileID: 3949172168691696611, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: timerEnded
       value: 
-      objectReference: {fileID: 11400000, guid: ef66b730039e3114e81352c1a132cc5d, type: 2}
+      objectReference: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
     - target: {fileID: 3949172168691696611, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: timeToSpawnBoss
       value: 90
@@ -9613,7 +9612,11 @@ PrefabInstance:
     - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: gEvent
       value: 
-      objectReference: {fileID: 11400000, guid: ef66b730039e3114e81352c1a132cc5d, type: 2}
+      objectReference: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
+    - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5627987750582289526, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: gEvent
       value: 
@@ -10228,11 +10231,27 @@ PrefabInstance:
     - target: {fileID: 3949172168691696611, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: timerEnded
       value: 
-      objectReference: {fileID: 11400000, guid: 8286eca760140474aaa5f4b8cf4fa1d7, type: 2}
+      objectReference: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
+    - target: {fileID: 3949172168691696611, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: timeToSpawnBoss
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: gEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 8286eca760140474aaa5f4b8cf4fa1d7, type: 2}
+      objectReference: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
+    - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097636280348243543, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnBoss
+      objectReference: {fileID: 0}
     - target: {fileID: 5627987750582289526, guid: 6fd6d425f43d1124999aede3d915212f, type: 3}
       propertyPath: gEvent
       value: 
@@ -10250,14 +10269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 75118179}
     m_Modifications:
-    - target: {fileID: 1003957136, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
-      propertyPath: timerEnded
-      value: 
-      objectReference: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
-    - target: {fileID: 1003957136, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
-      propertyPath: timeToSpawnBoss
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4481842594351054777, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10306,8 +10317,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Play Data
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1003957136, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad704d52eef518f44a893459ea64a6bd, type: 3}
 --- !u!224 &4758716673911649452
 RectTransform:

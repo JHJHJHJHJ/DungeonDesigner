@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class UnityGameObjectEvent : UnityEvent<GameObject> { }
+
 namespace DD.Core
 {
     public class DDEventListener : MonoBehaviour
     {
         public DDEvent gEvent;
-        public UnityEvent response;
+        public UnityGameObjectEvent response = new UnityGameObjectEvent();
 
         private void OnEnable()
         {
@@ -20,9 +23,9 @@ namespace DD.Core
             gEvent.Unregister(this);
         }
 
-        public void OnEventOccurs()
+        public void OnEventOccurs(GameObject go)
         {
-            response.Invoke();
+            response.Invoke(go);
         }
     }
 

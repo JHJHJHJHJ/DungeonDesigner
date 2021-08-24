@@ -11,10 +11,9 @@ namespace DD.Action
     {
         [SerializeField] float healAmount = 30f;
 
-        public override void Handle(ActionObject myObject)
+        public override void Handle(ActionObject myObject, GameObject myPlayer)
         {
-            GameObject player = GetMyPlayer(myObject);
-            Health health = player.GetComponent<Health>();
+            Health health = myPlayer.GetComponent<Health>();
             health.Heal(healAmount);
 
             myObject.EndActionWithThisObject();

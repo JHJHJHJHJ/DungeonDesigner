@@ -16,11 +16,26 @@ namespace DD.Action
 
             if (myObject.IsTarget())
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.GetComponent<AnimatorOverrider>().UpdateAnimationClipByDirection(myObject.transform);
+                GameObject myPlayer = GetMyPlayer(myObject);
+                if(myPlayer == null) return;
+
+                myPlayer.GetComponent<AnimatorOverrider>().UpdateAnimationClipByDirection(myObject.transform);
                 
-                action.Handle(myObject);
+                action.Handle(myObject, myPlayer);
             }
+        }
+
+        GameObject GetMyPlayer(ActionObject myObject)
+        {
+            foreach (Transform child in myObject.transform.parent)
+            {
+                if (child.CompareTag("Player"))
+                {
+                    return child.gameObject;
+                }
+            }
+
+            return null;
         }
     }
 }

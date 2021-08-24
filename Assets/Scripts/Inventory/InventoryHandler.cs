@@ -25,7 +25,7 @@ namespace DD.Inventory
             {
                 equipments.Add(equipmentToAdd);
                 UpdqteWholeEquipStats();
-                equipChanged.Occurred();
+                equipChanged.Occurred(this.gameObject);
 
                 // FindObjectOfType<FXMessage>().Show(equipmentToAdd.myName + "을(를) 얻었다!" + "\n" + equipmentToAdd.description);
             }

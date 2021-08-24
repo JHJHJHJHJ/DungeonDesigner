@@ -12,10 +12,9 @@ namespace DD.Action
     {
         [SerializeField] Equipment[] equipmentsToPickUp = null;
 
-        public override void Handle(ActionObject myObject)
+        public override void Handle(ActionObject myObject, GameObject myPlayer)
         {
-            GameObject player = GetMyPlayer(myObject);
-            InventoryHandler inventoryHandler = player.GetComponent<InventoryHandler>();
+            InventoryHandler inventoryHandler = myPlayer.GetComponent<InventoryHandler>();
 
             Equipment equipmentToPickUp;
             equipmentToPickUp = equipmentsToPickUp[Random.Range(0, equipmentsToPickUp.Length)];

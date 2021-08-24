@@ -19,7 +19,7 @@ namespace DD.PlayData
             {
                 if(timeSinceGameStart >= timeToSpawnBoss)
                 {
-                    timerEnded.Occurred();
+                    timerEnded.Occurred(this.gameObject);
                     hasEnded = true;
                 }
             }

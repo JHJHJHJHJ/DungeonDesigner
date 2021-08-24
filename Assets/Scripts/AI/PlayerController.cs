@@ -148,6 +148,13 @@ namespace DD.AI
             state = PlayerState.Idle;
         }
 
+        public void ReadyBossFight()
+        {
+            currentTarget = null;
+
+            state = PlayerState.Idle;
+        }
+
         bool IsInRange()
         {
             return Vector2.Distance(transform.position, currentTarget.transform.position) <= currentTarget.profile.interactRange;

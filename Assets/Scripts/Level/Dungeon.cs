@@ -13,7 +13,7 @@ namespace DD.Level
     public class Dungeon : MonoBehaviour
     {
         [Header("Prefabs")]
-        [SerializeField] GameObject playerPrefab = null;
+        // [SerializeField] GameObject playerPrefab = null;
         [SerializeField] ActionObject bossEnemyPrefab = null;
 
         [Header("Components")]
@@ -34,13 +34,14 @@ namespace DD.Level
             
         }
 
-        public void Initialzie()
+        public void Initialzie(GameObject playerToSpawn)
         {
-            currentPlayer = Instantiate(playerPrefab, playerSpawnPos.position, Quaternion.identity, objectsParent);
+            currentPlayer = Instantiate(playerToSpawn, playerSpawnPos.position, Quaternion.identity, objectsParent);
 
             inventoryDisplay.SetPlayer(currentPlayer);
             healthDisplay.SetPlayer(currentPlayer);
             
+            bossTimer.SetActive(true);
             bossTimer.GetComponent<Timer>().Reset();
         }
 
@@ -58,18 +59,36 @@ namespace DD.Level
             return objectsParent;
         }
 
-        public void SpawnBoss() // Event Listener에서 실행됨
+        public void SpawnBoss(GameObject endedTimer) // Event Listener에서 실행됨
         {
-            foreach(Transform child in objectsParent)
-            {
-                if(child.CompareTag("Enemy")) Destroy(child.gameObject);                
-            }
+            if(endedTimer != bossTimer) return;
 
-            currentPlayer.GetComponent<PlayerController>().GoToIdleState();
+            // currentPlayer.GetComponent<PlayerController>().ReadyBossFight();
 
-            Instantiate(bossEnemyPrefab, bossSpawnPos.position, Quaternion.identity, objectsParent);
+            // foreach(Transform child in objectsParent)
+            // {
+            //     if(child.CompareTag("Enemy")) Destroy(child.gameObject);                
+            // }
+
+            ActionObject boss = Instantiate(bossEnemyPrefab, bossSpawnPos.position, Quaternion.identity, objectsParent);
 
             bossTimer.SetActive(false);
+        }
+
+        public void HandleDungeonEnd(GameObject deathObject) // Event Listener에서 실행됨
+        {
+            if(deathObject.transform.parent != objectsParent) return;
+
+            if(deathObject.CompareTag("Boss"))
+            {
+                FindObjectOfType<Result>().AddLike();
+            }
+            else if(deathObject.CompareTag("Player"))
+            {
+                FindObjectOfType<Result>().AddDislike();
+            }
+
+            Close();
         }
     }
 }

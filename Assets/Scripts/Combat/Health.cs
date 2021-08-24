@@ -76,16 +76,14 @@ namespace DD.Combat
 
                 if(actionObject.CompareTag("Boss"))
                 {
-                    dungeonEnded.Occurred();
-                    print("승리!");
+                    dungeonEnded.Occurred(this.gameObject); // Win
                 }
 
                 Destroy(gameObject, 1f);
             }    
             else // Player
             {
-                dungeonEnded.Occurred();
-                print("패배...");
+                dungeonEnded.Occurred(this.gameObject); // Lose
 
                 // FindObjectOfType<FXMessage>().Show("전투에서 패배했다." + "\n" + "눈 앞이 캄캄해졌다...");
             }

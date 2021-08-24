@@ -7,24 +7,59 @@ namespace DD.Level
 {
     public class DungeonManager : MonoBehaviour
     {
+        [Header("Dungeon Instance")]
         [SerializeField] Dungeon[] dungeons = null;
+
+        [Header("Wave")]
+        [SerializeField] DungeonWave dungeonWave = null;
+
+        [Header("Events")]
         [SerializeField] DDEvent[] equipChanged = null;
 
-        private void Start() {
-            OpenDungeon(1);
-            OpenDungeon(0);
-            OpenDungeon(2);
+        private void Start() 
+        {
+            StartCoroutine(HandleWave());
         }
 
-        void OpenDungeon(int index)
+        void OpenDungeon(int index, GameObject playerToSpawn)
         {
             dungeons[index].gameObject.SetActive(true);
-            dungeons[index].Initialzie();
+            dungeons[index].Initialzie(playerToSpawn);
         }
 
         void CloseDungeon(int index)
         {
             dungeons[index].Close();
+        }
+
+        IEnumerator HandleWave()
+        {
+            foreach(WaveData wave in dungeonWave.waves)
+            {
+                yield return new WaitForSeconds(wave.timeToWait);
+
+                foreach(DungeonToSpawn dungeonToSpawn in wave.dungeonsToSpawn)
+                {
+                    OpenDungeon(GetIndexToOpen(), dungeonToSpawn.playerToSpawn);
+                }
+            }
+        }
+
+        int GetIndexToOpen()
+        {
+            List<int> closedDungeonIndexList = new List<int>();
+            for (int i = 0; i < dungeons.Length; i++)
+            {
+                if (!dungeons[i].gameObject.activeSelf)
+                {
+                    closedDungeonIndexList.Add(i);
+                    print(i);
+                }
+            }
+
+            int index = closedDungeonIndexList[Random.Range(0, closedDungeonIndexList.Count)];
+
+            return index;
         }
     }
 }

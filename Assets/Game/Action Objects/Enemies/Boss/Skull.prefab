@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3640737501964078778, guid: e6009c4296fb4c34fb92e6aaff824768, type: 3}
       propertyPath: dropCoin
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5785606248864964712, guid: e6009c4296fb4c34fb92e6aaff824768, type: 3}
       propertyPath: m_LocalPosition.y

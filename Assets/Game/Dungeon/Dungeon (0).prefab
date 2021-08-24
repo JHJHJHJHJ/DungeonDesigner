@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085eaf5f994c3ff4aa718dec2b6542e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSpawnBoss: 90
+  timeToSpawnBoss: 15
   timerEnded: {fileID: 11400000, guid: 63993828061534044a2092fa9504b6dd, type: 2}
 --- !u!1 &694761867621039243
 GameObject:
@@ -984,13 +984,14 @@ GameObject:
   - component: {fileID: 870803978}
   - component: {fileID: 3034618659115953459}
   - component: {fileID: 4097636280348243543}
+  - component: {fileID: 1787765504}
   m_Layer: 7
   m_Name: Dungeon (0)
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3949172168366827990
 Transform:
   m_ObjectHideFlags: 0
@@ -1096,7 +1097,35 @@ MonoBehaviour:
       - m_Target: {fileID: 3034618659115953459}
         m_TargetAssemblyTypeName: DD.Level.Dungeon, Assembly-CSharp
         m_MethodName: SpawnBoss
-        m_Mode: 1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1787765504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949172168366827991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a995ba7d763e294fbfec8994d0949c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gEvent: {fileID: 11400000, guid: e62e1d2f299dde14aadb78b3eed598dc, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3034618659115953459}
+        m_TargetAssemblyTypeName: DD.Level.Dungeon, Assembly-CSharp
+        m_MethodName: HandleDungeonEnd
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
