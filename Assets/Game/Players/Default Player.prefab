@@ -1226,7 +1226,7 @@ MonoBehaviour:
   - "\u3148\uB9DD\uAC9C \u3161\u3161"
   - "\uD658\uBD88\uD558\uB7EC\uAC10 \u3145\u3131"
   - "\uBA4D\uCCAD\uD55C AI..."
-  - "\uAC1C\uBC1C\uBE44 \uC5B4\uB530 \uC500 \uD68C\uC2DD\uD568?"
+  - "\uAC1C\uBC1C\uBE44 \uD68C\uC2DD\uBE44\uB85C \uB2E4\uC500?"
   chatBubble: {fileID: 419611354}
   textFrame: {fileID: 887532063}
   text: {fileID: 866051558}
