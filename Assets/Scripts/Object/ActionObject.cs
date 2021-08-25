@@ -7,6 +7,8 @@ namespace DD.Object
 {
     public class ActionObject : MonoBehaviour
     {
+        public int dungeonID = 0;
+
         [Header("Configs")]
         public ObjectType type;
         public ObjectProfile profile;

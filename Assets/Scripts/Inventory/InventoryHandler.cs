@@ -8,6 +8,8 @@ namespace DD.Inventory
     [RequireComponent(typeof(DDEventListener))]
     public class InventoryHandler : MonoBehaviour
     {
+        public int dungeonID;
+
         [SerializeField] int limitCount = 3;
         [SerializeField] List<Equipment> equipments = new List<Equipment>();
         [SerializeField] DDEvent equipChanged;
@@ -27,11 +29,13 @@ namespace DD.Inventory
                 UpdqteWholeEquipStats();
                 equipChanged.Occurred(this.gameObject);
 
-                // FindObjectOfType<FXMessage>().Show(equipmentToAdd.myName + "을(를) 얻었다!" + "\n" + equipmentToAdd.description);
+                string messageToShow = equipmentToAdd.myName + "을(를) 얻었다!" + "\n" + equipmentToAdd.description;
+                FXMessage.ShowMessage(messageToShow, dungeonID);
             }
             else
             {
-                // FindObjectOfType<FXMessage>().Show("인벤토리가 가득 찼습니다.");
+                string messageToShow = "인벤토리가 가득 찼습니다.";
+                FXMessage.ShowMessage(messageToShow, dungeonID);
             }
         }
 

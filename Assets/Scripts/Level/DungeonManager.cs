@@ -51,7 +51,7 @@ namespace DD.Level
         }
 
         void OpenDungeon(int index, GameObject playerToSpawn)
-        {
+        {   
             dungeons[index].gameObject.SetActive(true);
             dungeons[index].Initialzie(playerToSpawn);
         }

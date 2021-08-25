@@ -78,8 +78,10 @@ namespace DD.Combat
                 {
                     dungeonEnded.Occurred(this.gameObject); // Win
                 }
-
-                Destroy(gameObject, 1f);
+                else
+                {
+                    Destroy(gameObject, 1f);
+                }
             }    
             else // Player
             {

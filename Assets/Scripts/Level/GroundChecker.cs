@@ -8,12 +8,16 @@ namespace DD.Level
     {
         bool isOnGround = false;
         Transform currentObjectsParent = null;
+        int currentDungeonID = 0;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Ground"))
             {
-                currentObjectsParent = other.GetComponent<Dungeon>().GetObjectsParent();
+                Dungeon currentDungeon = other.GetComponent<Dungeon>();
+                currentObjectsParent = currentDungeon.GetObjectsParent();
+                currentDungeonID = currentDungeon.dungeonID;
+
                 isOnGround = true;
             }
         }
@@ -35,6 +39,11 @@ namespace DD.Level
         public Transform GetCurrentObjectsParent()
         {
             return currentObjectsParent;
+        }
+
+        public int GetCurrentDungeonID()
+        {
+            return currentDungeonID;
         }
     }
 

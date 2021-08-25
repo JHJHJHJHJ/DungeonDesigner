@@ -66,6 +66,8 @@ namespace DD.Level
         {
             ActionObject actionObject = Instantiate(objectToSpawn, spawnPos, Quaternion.identity, 
                 groundChecker.GetCurrentObjectsParent());
+            actionObject.dungeonID = groundChecker.GetCurrentDungeonID();
+            
 
             FindObjectOfType<Resource>().UseCoin(objectToSpawn.profile.cost);
         }

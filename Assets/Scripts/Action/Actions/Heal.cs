@@ -19,7 +19,7 @@ namespace DD.Action
             myObject.EndActionWithThisObject();
             Destroy(myObject.gameObject);
 
-            // FindObjectOfType<FXMessage>().Show("체력을 모두 회복했다!");
+            FXMessage.ShowMessage("체력을 모두 회복했다!", myObject.dungeonID);
 
             // health.StartCoroutine(HandleFX());
         }

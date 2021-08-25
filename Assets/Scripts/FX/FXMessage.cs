@@ -7,6 +7,7 @@ namespace DD.FX
 {
     public class FXMessage : MonoBehaviour
     {
+        public int dungeonID = 0;
         [SerializeField] TextMeshProUGUI messageFrame;
         [SerializeField] TextMeshProUGUI message;
         [SerializeField] float timeToShow = 1f;
@@ -35,10 +36,20 @@ namespace DD.FX
             remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0f);
         }
 
-        public void Show(string messageToUpdate)
+        public void Show(string messageToUpdate, int dungeonID)
         {
+            if(this.dungeonID != dungeonID) return;
+
             remainingTime = timeToShow;
             currentText = messageToUpdate;
+        }
+
+        public static void ShowMessage(string messageToShow, int dungeonID)
+        {
+            foreach(FXMessage fxMessage in FindObjectsOfType<FXMessage>())
+            {
+                fxMessage.Show(messageToShow, dungeonID);
+            }
         }
     }
 }
